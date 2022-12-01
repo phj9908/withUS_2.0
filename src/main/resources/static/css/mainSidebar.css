@@ -9,7 +9,6 @@ body {
 body {
     margin: 0;
     padding: 0;
-    /*background-image: radial-gradient(#FFFAD7 0%, #FCDDB0 0%, #FF9F9F 0%);*/
     background-color: #FFFFFF;
 }
 nav {
@@ -20,6 +19,7 @@ nav {
     height: 100%;
     width: 400px;
     transition: all 800ms cubic-bezier(.8, 0, .33, 1);
+    float: left;
     border-radius: 0% 0% 0% 0%;
 }
 nav.nav-open {
