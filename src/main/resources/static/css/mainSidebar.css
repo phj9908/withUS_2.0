@@ -3,24 +3,30 @@
 }
 html,
 body {
-    height: 100vh;
+    height: 100%;
     width: 100%;
-}
-body {
     margin: 0;
     padding: 0;
     background-color: #FFFFFF;
 }
-nav {
+nav{
     overflow: hidden;
     position: relative;
     transform: translateX(-300px);
     background-color: #FCDDB0;
-    height: 100%;
     width: 400px;
     transition: all 800ms cubic-bezier(.8, 0, .33, 1);
     float: left;
     border-radius: 0% 0% 0% 0%;
+    z-index: 1000;
+    height: 1400px;
+}
+#select {
+    width: 400px;
+    float: left;
+    border-radius: 0% 0% 0% 0%;
+    z-index: 5;
+    height: 1400px;
 }
 nav.nav-open {
     transform: translateX(0px);
