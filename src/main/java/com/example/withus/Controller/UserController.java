@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
@@ -46,7 +47,7 @@ public class UserController {
     public String toLoginPage(HttpSession session) { // 로그인 페이지
         Long id = (Long) session.getAttribute("userId");
         if (id != null) { // 로그인된 상태
-            return "redirect:/";
+            return "redirect:/main";
         }
         return "login"; // 로그인되지 않은 상태
     }
@@ -58,7 +59,7 @@ public class UserController {
             return "redirect:/login";
         }
         session.setAttribute("userId", id);
-        return "redirect:/";
+        return "redirect:/main";
     }
 
     @PostMapping("/logout")

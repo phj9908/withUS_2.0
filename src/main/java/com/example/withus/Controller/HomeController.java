@@ -12,17 +12,17 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class HomeController {
 
-    @Autowired
-    private UserService userService;
-
-    @GetMapping("/")
-    public String home(HttpSession session, Model model) {
-        Long id = (Long) session.getAttribute("userId");
-        if (id != null) { // 로그인된 상태
-            UserVo userVo = userService.getUserById(id);
-            model.addAttribute("user", userVo);
-            return "home";
-        }
-        return "redirect:/login";
-    }
+//    @Autowired
+//    private UserService userService;
+//
+//    @GetMapping("/")
+//    public String home(HttpSession session, Model model) {
+//        Long id = (Long) session.getAttribute("userId");
+//        if (id != null) { // 로그인된 상태
+//            UserVo userVo = userService.getUserById(id);
+//            model.addAttribute("user", userVo);
+//            return "main";
+//        }
+//        return "redirect:/login";
+//    }
 }

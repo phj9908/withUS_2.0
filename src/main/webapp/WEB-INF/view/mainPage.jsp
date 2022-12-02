@@ -7,9 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=35o7z9sq66"></script>
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=35o7z9sq66&submodules=geocoder"></script>
     <link rel="stylesheet" type="text/css" href="../../docs/css/examples-base.css" />
-    <link rel="stylesheet" type="text/css" href="../../../css/mainMap.css" />
+    <link rel="stylesheet" type="text/css" href="../css/mainMap.css" />
     <title>with US</title>
     <link rel="stylesheet" type="text/css" href="/css/mainSidebar.css">
     <link rel="stylesheet" type="text/css" href="/css/groupAccordion.css">
@@ -25,7 +25,7 @@
     </div>
     <script src="../js/mainMap.js"></script>
 
-    <nav id ="slideBar">
+    <nav id ="leftSlideBar">
         <div class="menu-btn">
             <div class="line line--1"></div>
             <div class="line line--2"></div>
@@ -40,8 +40,6 @@
             <a href="http://localhost:8080/post" class="link">Post Test</a>
         </div>
     </nav>
-
-
 
     <div class="area">
         <div class="accordion">
@@ -60,12 +58,21 @@
             </div>
         </div>
     </div>
-
     <nav id="select">
         <button id="test-button">Test</button>
         <div>제목</div>
         <div>날짜</div>
     </nav>
+
+    <!--
+    <nav id ="RightSlideBar">
+        <div class="menu-btn">
+            <div class="line line--1"></div>
+            <div class="line line--2"></div>
+            <div class="line line--3"></div>
+        </div>
+    </nav>
+    -->
     <script defer>
         //아코디언 클릭 이벤트 정의
         document.querySelectorAll('.accordion .accordion_item > button').forEach((btn) => {

@@ -42,11 +42,11 @@
                 <table class = "table2">
                     <tr>
                         <td>제목</td>
-                        <td><input type = text name = title size=50></td>
+                        <td><input type = text name = title size=50 required></td>
                     </tr>
                     <tr>
                         <td>날짜</td>
-                        <td><input type = date name = title size=50></td>
+                        <td><input type = date name = title size=50 required></td>
                     </tr>
                     <tr>
                         <td>사진</td>
@@ -54,12 +54,13 @@
                     </tr>
                     <tr>
                         <td>내용</td>
-                        <td><textarea name = content cols=85 rows=15></textarea></td>
+                        <td><textarea name = content cols=85 rows=15 required></textarea></td>
                     </tr>
                 </table>
 
                 <center>
-                    <input type = "submit" value="작성">
+                    <button type="button" onclick="delOk()">이전으로</button>
+                    <button type="submit" onclick="que()">작성하기</button>
                 </center>
             </td>
         </tr>
@@ -77,6 +78,18 @@
     const upload = document.querySelector('.upload');
 
     upload.addEventListener('click', () => realUpload.click());
+</script>
+
+<script>
+    function delOk(){
+        var result = confirm("이전 페이지로 돌아가시겠습니까?");
+
+        if(result) {
+            return history.go(-1);
+        } else {
+            return false
+        }
+    }
 </script>
 </body>
 </html>

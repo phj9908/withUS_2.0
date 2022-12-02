@@ -2,39 +2,73 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Sign Up</title>
-</head>
-<body>
-    <h2>회원가입</h2>
-    <form action="/signup" method="post">
-        <div>
-            <input type="text" name="name" placeholder="Name"/>
-        </div>
-        <div>
-            <input type="text" name="username" placeholder="*Username"/>
-        </div>
-        <div>
-            <input type="text" name="email" placeholder="*Email"/>
-        </div>
-        <div>
-            <input type="password" name="password" placeholder="Password"/>
-        </div>
-        <div>
-            <input type="text" name="address" placeholder="Address"/>
-        </div>
-        <div>
-            <input type="text" name="phone" placeholder="Phone"/>
-        </div>
-        <div>
-            <input type="text" name="website" placeholder="Website"/>
-        </div>
-        <div>
-            <input type="text" name="company" placeholder="Company"/>
-        </div>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Sign Up</title>
+    </head>
 
-        <button type="submit">회원가입</button>
-    </form>
-</body>
+    <body>
+        <table  style="padding-top:50px" align = center width=550 border=0 cellpadding=2>
+        <tr>
+            <td height=20 align= center bgcolor=#FCDDB0><font color=white></font></td>
+        </tr>
+        <tr>
+            <td bgcolor=white>
+            <form action="/signup" method="post">
+                <table class = "table2" align=center>
+                    <tr>
+                        <td>아이디</td>
+                        <td><input type="text" name="mbrId" placeholder="아이디" size=50 required></td>
+                    </tr>
+                    <tr>
+                        <td>비밀번호</td>
+                        <td><input type="password" name="password" placeholder="비밀번호" size=50 required></td>
+                    </tr>
+                    <tr>
+                        <td>이름</td>
+                        <td><input type="text" name="name" placeholder="이름" size=50 required></td>
+                    </tr>
+                    <tr>
+                        <td>닉네임</td>
+                        <td><input type="text" name="username" placeholder="닉네임" size=50 required></td>
+                    </tr>
+                    <tr>
+                        <td>성별</td>
+                        <td><input type="text" name="mbrGen" placeholder="성별" size=50 required></td>
+                    </tr>
+                    <tr>
+                        <td>전화번호</td>
+                        <td><input type="text" name="mbrTel" placeholder="전화번호" size=50 required></td>
+                    </tr>
+                    <tr>
+                        <td>생일(선택)</td>
+                        <td><input type="text" name="phone" placeholder="생일" size=50></td>
+                    </tr>
+                    <tr>
+                        <td>이메일(선택)</td>
+                        <td><input type="text" name="email" placeholder="이메일" size=50></td>
+                    </tr>
+                </table>
+
+                <center>
+                    <button type="submit">가입하기</button>
+                    <button type="button" onclick="delOk()">취소</button>
+                </center>
+            </form>
+            </td>
+        </tr>
+        </table>
+
+        <script>
+            function delOk(){
+                var result = confirm("이전 페이지로 돌아가시겠습니까?");
+
+                if(result) {
+                    return history.go(-1);
+                } else {
+                    return false
+                }
+            }
+        </script>
+    </body>
 </html>
