@@ -8,7 +8,6 @@ import java.util.List;
 
 @Mapper
 public interface PostMapper {
-
     List<PostVo> getPostList(); // User 테이블 가져오기
     void insertPost(PostVo postVo);
 }

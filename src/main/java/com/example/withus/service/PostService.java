@@ -9,14 +9,11 @@ import java.util.List;
 
 @Service
 public class PostService {
-
     @Autowired
     private PostMapper postMapper;
-
     public List<PostVo> getPostList() {
         return postMapper.getPostList();
     }
-
     public void upload(PostVo postVo) {
         postMapper.insertPost(postVo);
     }

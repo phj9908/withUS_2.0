@@ -49,7 +49,6 @@ function map() {
 
             markerList = [];
             menuLayer.hide();
-
         }
     });
 
@@ -74,7 +73,6 @@ function map() {
 
         console.log('Coord: ' + e.coord.toString());
     };
-
 }
 
 function searchCoordinateToAddress(latlng) {
@@ -114,6 +112,7 @@ function searchCoordinateToAddress(latlng) {
         infoWindow.open(map, latlng);
     });
 }
+
 function makeAddress(item) {
     if (!item) {
         return;
@@ -194,6 +193,7 @@ var options = {
     timeout: 5000,
     maximumAge: 0
 };
+
 function success(pos) {
     crd = pos.coords;
     lati = crd.latitude;
@@ -207,4 +207,5 @@ function success(pos) {
 function error(err) {
     console.warn('ERROR(' + err.code + '): ' + err.message);
 };
+
 navigator.geolocation.getCurrentPosition(success, error, options);

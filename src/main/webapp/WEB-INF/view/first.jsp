@@ -2,8 +2,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>withUS</title>
+    <head>
+        <title>withUS</title>
+    </head>
 
     <style>
         #start_btn{
@@ -35,12 +36,12 @@
             text-align: center;
         }
     </style>
-</head>
-<body>
-<div id="style1">
-    <h1 id="logo">withUS</h1>
-    <h2 id="introduction">당신의 추억 어쩌고 당신의 여행 어쩌고 위드어스 소개</h2>
-    <button id="start_btn" onclick="location.href='login'" >시작하기</button>
-</div>
-</body>
+
+    <body>
+        <div id="style1">
+            <h1 id="logo">withUS</h1>
+            <h2 id="introduction">당신의 추억 어쩌고 당신의 여행 어쩌고 위드어스 소개</h2>
+            <button id="start_btn" onclick="location.href='login'" >시작하기</button>
+        </div>
+    </body>
 </html>

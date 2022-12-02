@@ -14,20 +14,18 @@ public class MainController {
 
     @Autowired
     private UserService userService;
-
     @RequestMapping("/")
     public String firstPage() {
         return "first";
     }
+
     @RequestMapping("/main")
     public String mainPage() {
-
         return "main";
     }
 
     @RequestMapping("/post")
     public String postPage() {
-
         return "post";
     }
 }

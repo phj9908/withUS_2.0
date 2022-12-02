@@ -64,5 +64,4 @@
         FROM tb_user
         WHERE mbr_sn = #{mbr_sn}
     </delete>
-
 </mapper>

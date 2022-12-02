@@ -33,19 +33,19 @@
                         <td><input type="text" name="mbr_nick" placeholder="닉네임" size=50 required></td>
                     </tr>
                     <tr>
-                        <td>생일</td>
-                        <td><input type="text" name="mbr_date" placeholder="생일" size=50 required></td>
-                    </tr>
-                    <tr>
                         <td>성별</td>
                         <td><input type="text" name="mbr_gen" placeholder="성별" size=50 required></td>
                     </tr>
                     <tr>
                         <td>전화번호</td>
-                        <td><input type="text" name="mbr_tel" placeholder="전화번호" size=50></td>
+                        <td><input type="text" name="mbr_tel" placeholder="전화번호" size=50 required></td>
                     </tr>
                     <tr>
-                        <td>이메일</td>
+                        <td>생일(선택)</td>
+                        <td><input type="text" name="mbr_date" placeholder="생일" size=50></td>
+                    </tr>
+                    <tr>
+                        <td>이메일(선택)</td>
                         <td><input type="text" name="mbr_email" placeholder="이메일" size=50></td>
                     </tr>
                 </table>

@@ -11,15 +11,12 @@ import java.util.List;
 public class UserService {
     @Autowired
     private UserMapper userMapper;
-
     public List<UserVo> getUserList() {
         return userMapper.getUserList();
     }
-
     public UserVo getUserById(Integer mbr_sn) {
         return userMapper.getUserById(mbr_sn);
     }
-
     public void signup(UserVo userVo) {
         userMapper.insertUser(userVo);
     }
@@ -35,7 +32,6 @@ public class UserService {
     public void modifyInfo(UserVo userVo) {
         userMapper.updateUser(userVo);
     }
-
     public void withdraw(Integer mbr_sn) {
         userMapper.deleteUser(mbr_sn);
     }
