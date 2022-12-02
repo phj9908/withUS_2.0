@@ -44,9 +44,7 @@
             <div class="area">
                 <div class="accordion">
                     <div class="accordion_item open">
-                        <button>
-                            그룹
-                        </button>
+                        <button>그룹</button>
                         <div class="accordion_content">
                             <ul>
                                 <li>그룹1</li>
@@ -73,6 +71,7 @@
                 </div>
             </nav>
             -->
+
             <script defer>
                 //아코디언 클릭 이벤트 정의
                 document.querySelectorAll('.accordion .accordion_item > button').forEach((btn) => {

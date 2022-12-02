@@ -12,6 +12,7 @@ body {
 nav{
     overflow: hidden;
     position: relative;
+    float: left;
     transform: translateX(-300px);
     background-color: #FCDDB0;
     width: 400px;
