@@ -16,18 +16,18 @@ public class UserService {
         return userMapper.getUserList();
     }
 
-    public UserVo getUserById(Long id) {
-        return userMapper.getUserById(id);
+    public UserVo getUserById(Integer mbr_sn) {
+        return userMapper.getUserById(mbr_sn);
     }
 
     public void signup(UserVo userVo) {
         userMapper.insertUser(userVo);
     }
 
-    public Long login(String email, String password) {
-        UserVo userVo = userMapper.getUserByEmail(email);
+    public Integer login(String mbr_id, String password) {
+        UserVo userVo = userMapper.getUserByEmail(mbr_id);
         if (userVo.getPassword().equals(password)) {
-            return userVo.getId();
+            return userVo.getMbr_sn();
         }
         return null;
     }
@@ -36,7 +36,7 @@ public class UserService {
         userMapper.updateUser(userVo);
     }
 
-    public void withdraw(Long id) {
-        userMapper.deleteUser(id);
+    public void withdraw(Integer mbr_sn) {
+        userMapper.deleteUser(mbr_sn);
     }
 }

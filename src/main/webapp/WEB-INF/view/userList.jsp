@@ -10,27 +10,27 @@
     <h2>User List</h2>
     <table>
         <tr>
-            <th>id</th>
+            <th>sn</th>
             <th>name</th>
             <th>username</th>
-            <th>email</th>
+            <th>id</th>
             <th>password</th>
-            <th>address</th>
-            <th>phone</th>
-            <th>website</th>
-            <th>company</th>
+            <th>date</th>
+            <th>gen</th>
+            <th>tel</th>
+            <th>email</th>
         </tr>
         <c:forEach items="${list}" var="u">
         <tr>
-            <td>${u.id}</td>
-            <td>${u.name}</td>
-            <td>${u.username}</td>
-            <td>${u.email}</td>
+            <td>${u.mbr_sn}</td>
+            <td>${u.mbr_nm}</td>
+            <td>${u.mbr_nick}</td>
+            <td>${u.mbr_id}</td>
             <td>${u.password}</td>
-            <td>${u.address}</td>
-            <td>${u.phone}</td>
-            <td>${u.website}</td>
-            <td>${u.company}</td>
+            <td>${u.mbr_date}</td>
+            <td>${u.mbr_gen}</td>
+            <td>${u.mbr_tel}</td>
+            <td>${u.mbr_email}</td>
         </tr>
         </c:forEach>
     </table>

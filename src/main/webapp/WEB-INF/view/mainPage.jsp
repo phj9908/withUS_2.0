@@ -33,7 +33,7 @@
         </div>
 
         <div class="nav-links">
-            <a href="" class="link">My page</a>
+            <a href="http://localhost:8080/mypage" class="link">My page</a>
             <a href="" class="link">Story</a>
             <a href="" class="link">Calendar / D-day</a>
             <a href="" class="link">Message</a>

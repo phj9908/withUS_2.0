@@ -4,15 +4,14 @@ import lombok.Data;
 
 @Data
 public class UserVo {
-
-    private Long id;
-    private String name;
-    private String username;
-    private String email;
+    private Integer mbr_sn;
+    private Integer gr_sn;
+    private String mbr_id;
     private String password;
-    private String address;
-    private String phone;
-    private String website;
-    private String company;
-
+    private String mbr_nm;
+    private String mbr_nick;
+    private String mbr_date;
+    private String mbr_gen;
+    private String mbr_tel;
+    private String mbr_email;
 }

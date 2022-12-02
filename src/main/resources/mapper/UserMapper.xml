@@ -4,67 +4,65 @@
     <!-- User 테이블 가져오기 -->
     <select id="getUserList" resultType="com.example.withus.vo.UserVo">
         SELECT *
-        FROM User
+        FROM tb_user
     </select>
 
     <!-- 회원가입 -->
     <insert id="insertUser" parameterType="com.example.withus.vo.UserVo">
-        INSERT INTO User
+        INSERT INTO tb_user
         (
-        name,
-        username,
-        email,
-        password,
-        address,
-        phone,
-        website,
-        company
+         mbr_id,
+         password,
+         mbr_nm,
+         mbr_nick,
+         mbr_date,
+         mbr_gen,
+         mbr_tel,
+         mbr_email
         )
         VALUES
         (
-        #{name},
-        #{username},
-        #{email},
+        #{mbr_id},
         #{password},
-        #{address},
-        #{phone},
-        #{website},
-        #{company}
+        #{mbr_nm},
+        #{mbr_nick},
+        #{mbr_date},
+        #{mbr_gen},
+        #{mbr_tel},
+        #{mbr_email}
         )
     </insert>
 
     <!-- 회원 정보 가져오기 -->
     <select id="getUserByEmail" resultType="com.example.withus.vo.UserVo">
         SELECT *
-        FROM User
-        WHERE email = #{email}
+        FROM tb_user
+        WHERE mbr_id = #{mbr_id}
     </select>
 
     <select id="getUserById" resultType="com.example.withus.vo.UserVo">
         SELECT *
-        FROM User
-        WHERE id = #{id}
+        FROM tb_user
+        WHERE mbr_sn = #{mbr_sn}
     </select>
 
     <!-- 회원정보 수정 -->
     <update id="updateUser" parameterType="com.example.withus.vo.UserVo">
-        UPDATE User
-        SET name = #{name},
-            username = #{username},
-            email = #{email},
+        UPDATE tb_user
+        SET mbr_nm = #{mbr_nm},
+            mbr_nick = #{mbr_nick},
             password = #{password},
-            address = #{address},
-            phone = #{phone},
-            website = #{website},
-            company = #{company}
-        WHERE id = #{id}
+            mbr_date = #{mbr_date},
+            mbr_tel = #{mbr_tel},
+            mbr_email = #{mbr_email}
+        WHERE mbr_sn = #{mbr_sn}
     </update>
 
     <!-- 탈퇴 -->
     <delete id="deleteUser">
         DELETE
-        FROM User
-        WHERE id = #{id}
+        FROM tb_user
+        WHERE mbr_sn = #{mbr_sn}
     </delete>
 
 </mapper>

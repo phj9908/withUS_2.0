@@ -10,7 +10,7 @@
     <form action="/login" method="post">
     <h2>로그인</h2>
         <div>
-            <input type="text" name="email" placeholder="Email"/>
+            <input type="text" name="mbr_id" placeholder="ID"/>
         </div>
         <div>
             <input type="password" name="password" placeholder="Password"/>

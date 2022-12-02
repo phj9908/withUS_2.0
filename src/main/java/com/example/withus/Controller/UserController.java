@@ -18,13 +18,6 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("/userList")
-    public String getUserList(Model model) {
-        List<UserVo> userList = userService.getUserList();
-        model.addAttribute("list", userList);
-        return "userList";
-    }
-
     @GetMapping("/signup")
     public String toSignupPage() {  //회원가입 페이지
         return "signup";
@@ -45,7 +38,7 @@ public class UserController {
 
     @GetMapping("/login")
     public String toLoginPage(HttpSession session) { // 로그인 페이지
-        Long id = (Long) session.getAttribute("userId");
+        Integer id = (Integer) session.getAttribute("userId");
         if (id != null) { // 로그인된 상태
             return "redirect:/main";
         }
@@ -53,8 +46,8 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public String login(String email, String password, HttpSession session) { // 로그인
-        Long id = userService.login(email, password);
+    public String login(String mbr_id, String password, HttpSession session) { // 로그인
+        Integer id = userService.login(mbr_id, password);
         if (id == null) { // 로그인 실패
             return "redirect:/login";
         }
@@ -70,7 +63,7 @@ public class UserController {
 
     @GetMapping("/update")
     public String toUpdatePage(HttpSession session, Model model) { // 회원 정보 수정 페이지
-        Long id = (Long) session.getAttribute("userId");
+        Integer id = (Integer) session.getAttribute("userId");
         UserVo userVo = userService.getUserById(id);
         model.addAttribute("user", userVo);
         return "update";
@@ -78,19 +71,25 @@ public class UserController {
 
     @PostMapping("/update")
     public String modifyInfo(HttpSession session, UserVo userVo) { // 회원 정보 수정
-        Long id = (Long) session.getAttribute("userId");
-        userVo.setId(id);
+        Integer id = (Integer) session.getAttribute("userId");
+        userVo.setMbr_sn(id);
         userService.modifyInfo(userVo);
         return "redirect:/";
     }
 
     @PostMapping("/delete")
     public String withdraw(HttpSession session) { // 회원 탈퇴
-        Long id = (Long) session.getAttribute("userId");
+        Integer id = (Integer) session.getAttribute("userId");
         if (id != null) {
             userService.withdraw(id);
         }
         session.invalidate();
         return "redirect:/";
+    }
+    @GetMapping("/mypage")
+    public String myPage(HttpSession session, Model model) {
+        List<UserVo> userList = userService.getUserList();
+        model.addAttribute("list", userList);
+        return "userList";
     }
 }

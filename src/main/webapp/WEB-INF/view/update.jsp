@@ -10,36 +10,28 @@
     <h2>회원 정보 수정</h2>
     <form action="/update" method="post">
         <p>
-            Name<br>
-            <input type="text" name="name" value="${user.name}"/>
+            이름<br>
+            <input type="text" name="mbr_nm" value="${user.mbr_nm}"/>
         </p>
         <p>
-            Username<br>
-            <input type="text" name="username" value="${user.username}"/>
+            닉네임<br>
+            <input type="text" name="mbr_nick" value="${user.mbr_nick}"/>
         </p>
         <p>
-            Email<br>
-            <input type="text" name="email" value="${user.email}"/>
-        </p>
-        <p>
-            Password<br>
+            비밀번호<br>
             <input type="text" name="password" value="${user.password}"/>
         </p>
         <p>
-            Address<br>
-            <input type="text" name="address" value="${user.address}"/>
+            주소<br>
+            <input type="text" name="mbr_date" value="${user.mbr_date}"/>
         </p>
         <p>
-            Phone<br>
-            <input type="text" name="phone" value="${user.phone}"/>
+            번호<br>
+            <input type="text" name="mbr_tel" value="${user.mbr_tel}"/>
         </p>
         <p>
-            Website<br>
-            <input type="text" name="website" value="${user.website}"/>
-        </p>
-        <p>
-            Company<br>
-            <input type="text" name="company" value="${user.company}"/>
+            이메일<br>
+            <input type="text" name="mbr_email" value="${user.mbr_email}"/>
         </p>
 
         <button type="submit">저장하기</button>
