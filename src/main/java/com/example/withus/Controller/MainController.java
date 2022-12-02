@@ -9,13 +9,13 @@ public class MainController {
     @RequestMapping("/main")
     public String mainPage() {
 
-        return "templates/mainPage.html";
+        return "mainPage";
     }
 
     @RequestMapping("/post")
     public String postPage() {
 
-        return "templates/post.html";
+        return "post";
     }
 
 }
