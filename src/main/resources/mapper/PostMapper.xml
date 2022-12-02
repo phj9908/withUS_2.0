@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.withus.mapper.PostMapper">
+    <!-- 테이블 가져오기 -->
+    <select id="getPostList" resultType="com.example.withus.vo.PostVo">
+        SELECT *
+        FROM tb_txt
+    </select>
+
+    <!-- 게시물 작성 -->
+    <insert id="insertPost" parameterType="com.example.withus.vo.PostVo">
+        INSERT INTO tb_txt
+        (
+            txt_nm,
+            txt_cn
+        )
+        VALUES
+            (
+                #{txt_nm},
+                #{txt_cn}
+            )
+    </insert>
+</mapper>

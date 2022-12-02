@@ -22,7 +22,7 @@ public class MainController {
     @RequestMapping("/main")
     public String mainPage() {
 
-        return "mainPage";
+        return "main";
     }
 
     @RequestMapping("/post")
@@ -30,12 +30,4 @@ public class MainController {
 
         return "post";
     }
-
-//    @RequestMapping("/mypage")
-//    public String myPage(HttpSession session, Model model) {
-//        Integer id = (Integer) session.getAttribute("userId");
-//            UserVo userVo = userService.getUserById(id);
-//            model.addAttribute("list", userVo);
-//        return "userList";
-//    }
 }

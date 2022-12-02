@@ -2,6 +2,8 @@ package com.example.withus.vo;
 
 import lombok.Data;
 
+import java.util.Date;
+
 @Data
 public class UserVo {
     private Integer mbr_sn;

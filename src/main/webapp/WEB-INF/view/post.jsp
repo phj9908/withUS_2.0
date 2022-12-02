@@ -32,7 +32,7 @@
 </style>
 
 <body>
-<form method = "get" action = "write_action.php">
+<form method = "post" action = "/post">
     <table  style="padding-top:50px" align = center width=700 border=0 cellpadding=2 >
         <tr>
             <td height=20 align= center bgcolor=#FF9F9F><font color=white></font></td>
@@ -42,7 +42,7 @@
                 <table class = "table2">
                     <tr>
                         <td>제목</td>
-                        <td><input type = text name = title size=50 required></td>
+                        <td><input type = "text" name ="txt_nm" size=50 required></td>
                     </tr>
                     <tr>
                         <td>날짜</td>
@@ -54,13 +54,13 @@
                     </tr>
                     <tr>
                         <td>내용</td>
-                        <td><textarea name = content cols=85 rows=15 required></textarea></td>
+                        <td><textarea type="text" name ="txt_cn" cols=85 rows=15 required></textarea></td>
                     </tr>
                 </table>
 
                 <center>
                     <button type="button" onclick="delOk()">이전으로</button>
-                    <button type="submit" onclick="que()">작성하기</button>
+                    <button type="submit">작성하기</button>
                 </center>
             </td>
         </tr>
