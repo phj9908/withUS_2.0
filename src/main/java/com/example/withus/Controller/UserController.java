@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -46,11 +48,12 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public String login(String mbr_id, String password, HttpSession session) { // 로그인
-        Integer id = userService.login(mbr_id, password);
-        if (id == null) { // 로그인 실패
-            return "redirect:/login";
-        }
+    public String login(UserVo userVo, HttpSession session) { // 로그인
+        Integer id = userService.login(userVo);
+//        if (id == null) { // 로그인 실패
+//            modelMap.addAttribute("message", "실패");
+//            return "redirect:/login";
+//        }
         session.setAttribute("userId", id);
         return "redirect:/main";
     }
