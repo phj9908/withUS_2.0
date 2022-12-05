@@ -8,6 +8,7 @@
     </head>
 
     <body>
+        <span style="color: red;">${message}</span>
         <form action="/login" method="post">
         <h2>로그인</h2>
             <div>
