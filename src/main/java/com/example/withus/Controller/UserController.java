@@ -48,7 +48,7 @@ public class UserController {
     // 로그인 페이지
     @GetMapping("/login")
     public String toLoginPage(HttpSession session) {
-        Integer sn = (Integer) session.getAttribute("userSn");
+        LoginResponse sn = (LoginResponse) session.getAttribute("userId");
         if (sn != null) { // 로그인된 상태
             return "redirect:/main";
         }
@@ -60,6 +60,8 @@ public class UserController {
     public String login(UserVo userVo, ModelMap model, HttpSession session) {
         String mbrId = userVo.getMbr_id();
         String mbrPswd = userVo.getPassword();
+        Integer mbrSn = userServiceImpl.getMbrSn(mbrId, mbrPswd);
+
         // 유효성 검사
         if (StringUtils.isEmpty(mbrId) || StringUtils.isEmpty(mbrPswd)) {
             model.addAttribute("message", "모든 정보를 입력해주세요");
@@ -75,6 +77,14 @@ public class UserController {
         }
 
         session.setAttribute("userId", loginResponse);
+        session.setAttribute("userSn", mbrSn);
+
+        if(mbrSn == null){
+            System.out.println("Null");
+        } else {
+            System.out.println(mbrSn);
+        }
+
         return "redirect:/main";
     }
 

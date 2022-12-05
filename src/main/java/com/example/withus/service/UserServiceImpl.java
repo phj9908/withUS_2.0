@@ -70,7 +70,14 @@ public class UserServiceImpl implements UserService {
     @Override
     public Integer getMbrSn(String mbr_id, String password) {
         UserVo userVo = userMapper.getUserById(mbr_id);
-        if (userVo.getPassword().equals(password)) {
+        UserVo loginMember = userMapper.getUserByEmail(userVo);
+        LoginResponse loginResponse = new LoginResponse();
+
+        userMapper.updateUser(loginMember);
+        loginResponse.setLoginMember(loginMember);
+        loginResponse.setSuccess(true);
+
+        if (loginResponse.isSuccess()) {
             return userVo.getMbr_sn();
         }
         return null;
