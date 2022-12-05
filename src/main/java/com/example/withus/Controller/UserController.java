@@ -30,15 +30,10 @@ public class UserController {
         return "signup";
     }
 
+    // 회원가입
     @PostMapping("/signup")
-    public String signUp(UserVo userVo) { // 회원가입
-//        String mbrNm = userVo.getMbr_nm();
-//        String mbrId = userVo.getMbr_id();
-//        String mbrPswd = userVo.getPassword();
-//        // 유효성 검사
-//        if(StringUtils.isEmpty(mbrNm) || StringUtils.isEmpty(mbrId) || StringUtils.isEmpty(mbrPswd)) {
-//            return "signup";
-//        }
+    public String signUp(UserVo userVo) {
+
         try {
             userServiceImpl.signUp(userVo);
         } catch (DuplicateKeyException e) {
@@ -50,8 +45,9 @@ public class UserController {
         return "redirect:/login";
     }
 
+    // 로그인 페이지
     @GetMapping("/login")
-    public String toLoginPage(HttpSession session) { // 로그인 페이지
+    public String toLoginPage(HttpSession session) {
         Integer id = (Integer) session.getAttribute("userId");
         if (id != null) { // 로그인된 상태
             return "redirect:/main";
@@ -59,8 +55,9 @@ public class UserController {
         return "login"; // 로그인되지 않은 상태
     }
 
+    // 로그인
     @PostMapping("/login")
-    public String login(UserVo userVo, ModelMap model, HttpSession session) { // 로그인
+    public String login(UserVo userVo, ModelMap model, HttpSession session) {
         String mbrId = userVo.getMbr_id();
         String mbrPswd = userVo.getPassword();
         // 유효성 검사
@@ -81,38 +78,35 @@ public class UserController {
         session.setAttribute("userId", loginResponse);
         return "redirect:/main";
     }
-//        Integer id = userServiceImpl.login(userVo);
-//        if (id == null) { // 로그인 실패
-//            modelMap.addAttribute("message", "실패");
-//            return "redirect:/login";
-//        }
-//        session.setAttribute("userId", loginResponse);
 
-
+    // 로그아웃
     @PostMapping("/logout")
-    public String logout(HttpSession session) { // 로그아웃
+    public String logout(HttpSession session) {
         session.invalidate();
         return "redirect:/";
     }
 
+    // 회원 정보 수정 페이지
     @GetMapping("/update")
-    public String toUpdatePage(HttpSession session, Model model) { // 회원 정보 수정 페이지
+    public String toUpdatePage(HttpSession session, Model model) {
         Integer id = (Integer) session.getAttribute("userId");
         UserVo userVo = userServiceImpl.getUserById(id);
         model.addAttribute("user", userVo);
         return "update";
     }
 
+    // 회원 정보 수정
     @PostMapping("/update")
-    public String modifyInfo(HttpSession session, UserVo userVo) { // 회원 정보 수정
+    public String modifyInfo(HttpSession session, UserVo userVo) {
         Integer id = (Integer) session.getAttribute("userId");
         userVo.setMbr_sn(id);
         userServiceImpl.modifyInfo(userVo);
         return "redirect:/";
     }
 
+    // 회원 탈퇴
     @PostMapping("/delete")
-    public String withdraw(HttpSession session) { // 회원 탈퇴
+    public String withdraw(HttpSession session) {
         Integer id = (Integer) session.getAttribute("userId");
         if (id != null) {
             userServiceImpl.withdraw(id);
