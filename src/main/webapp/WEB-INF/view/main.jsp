@@ -15,6 +15,14 @@
         <link rel="stylesheet" type="text/css" href="/css/groupAccordion.css">
         <link rel="stylesheet" type="text/css" href="/css/mainSub.css">
         <script src="/js/mainSidebar.js" defer></script>
+        <script>
+            $(document).ready(function(){
+                // 글 작성하기 부분
+                $("#test-button").click(function(){
+                    //$("p").hide();
+                });
+            });
+        </script>
     </head>
 
     <body>
@@ -57,9 +65,14 @@
                 </div>
             </div>
             <nav id="select">
-                <button id="test-button">Test</button>
-                <div>제목</div>
-                <div>날짜</div>
+                <div id = locationTitle></div>
+                <ul>
+                    <li id =category_name></li>
+                    <li id =place_url></li>
+                    <li id =phone></li>
+                    <li id =distance></li>
+                </ul>
+                <button id="writeBtn" style="display: none">글 작성하기</button>
             </nav>
 
             <!--

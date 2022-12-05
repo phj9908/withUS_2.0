@@ -3,6 +3,8 @@ var lati,longi;
 var infoWindow;
 var markerList=[];
 var menuLayer = $('<div style="position:absolute;z-index:10000;background-color:#fff;border:solid 1px #333;padding:10px;display:none;"></div>');
+var address;
+// var isClick = false;
 
 function map() {
 
@@ -32,6 +34,7 @@ function map() {
     map.addListener('click', function(e) {
         searchCoordinateToAddress(e.coord);
         setMarkerAndInfo(e);
+        //isClick = true;
     });
 
     naver.maps.Event.addListener(map, 'keydown', function(e) {
@@ -110,6 +113,38 @@ function searchCoordinateToAddress(latlng) {
         ].join('\n'));
 
         infoWindow.open(map, latlng);
+        getData();
+
+        function getData() {
+            $.ajax({
+                method: "GET",
+                url: "https://dapi.kakao.com/v2/local/search/keyword.json?y=" + lati.toString() + "&x=" + longi.toString() + "&radius=20000",
+                data: {query: address},
+                headers: {Authorization: "KakaoAK 00b285e6c72f581d9c2f16bb7c585100"}
+            })
+                .done(function (msg) {
+                    console.log(msg);
+                    try {
+                        $("#locationTitle").html(" <strong>" + msg.documents[0].place_name + "</strong>");
+                        $("#category_name").html("<li>" + "category: " + msg.documents[0].category_name + "</li>");
+                        $("#place_url").html("<li>" + "url: " + msg.documents[0].place_url + "</li>");
+                        $("#phone").html("<li>" + "phone: " + msg.documents[0].phone + "</li>");
+                        $("#distance").html("<li>" + "현위치로 부터 " + msg.documents[0].distance + "m 거리에 있습니다." + "</li>");
+                        $("#writeBtn").css("display", "block");
+                        // if(isClick) {
+                        //
+                        //     console.log(isClick);
+                        //     //isClick=false
+                        // }
+                    } catch (error) {
+                        $("#locationTitle").html(" <strong>*정보 없음*</strong>");
+                        $("#category_name").html("<li>" + "" + "</li>");
+                        $("#place_url").html("<li>" + "" + "</li>");
+                        $("#phone").html("<li>" + "" + "</li>");
+                        $("#distance").html("<li>" + "" + "</li>");
+                    }
+                });
+        }
     });
 }
 
