@@ -22,8 +22,8 @@ public class UserServiceImpl implements UserService {
     public List<UserVo> getUserList() {
         return userMapper.getUserList();
     }
-    public UserVo getUserById(Integer mbr_sn) {
-        return userMapper.getUserById(mbr_sn);
+    public UserVo getUserBySn(Integer mbr_sn) {
+        return userMapper.getUserBySn(mbr_sn);
     }
 
     //암호화 적용
@@ -65,6 +65,15 @@ public class UserServiceImpl implements UserService {
             e.printStackTrace();
         }
         return loginResponse;
+    }
+
+    @Override
+    public Integer getMbrSn(String mbr_id, String password) {
+        UserVo userVo = userMapper.getUserById(mbr_id);
+        if (userVo.getPassword().equals(password)) {
+            return userVo.getMbr_sn();
+        }
+        return null;
     }
 
     public void modifyInfo(UserVo userVo) {

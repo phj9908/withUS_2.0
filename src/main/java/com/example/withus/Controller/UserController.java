@@ -48,8 +48,8 @@ public class UserController {
     // 로그인 페이지
     @GetMapping("/login")
     public String toLoginPage(HttpSession session) {
-        Integer id = (Integer) session.getAttribute("userId");
-        if (id != null) { // 로그인된 상태
+        Integer sn = (Integer) session.getAttribute("userSn");
+        if (sn != null) { // 로그인된 상태
             return "redirect:/main";
         }
         return "login"; // 로그인되지 않은 상태
@@ -74,7 +74,6 @@ public class UserController {
             return "login";
         }
 
-        UserVo loginMember = loginResponse.getLoginMember();
         session.setAttribute("userId", loginResponse);
         return "redirect:/main";
     }
@@ -89,8 +88,8 @@ public class UserController {
     // 회원 정보 수정 페이지
     @GetMapping("/update")
     public String toUpdatePage(HttpSession session, Model model) {
-        Integer id = (Integer) session.getAttribute("userId");
-        UserVo userVo = userServiceImpl.getUserById(id);
+        Integer sn = (Integer) session.getAttribute("userSn");
+        UserVo userVo = userServiceImpl.getUserBySn(sn);
         model.addAttribute("user", userVo);
         return "update";
     }
@@ -98,8 +97,8 @@ public class UserController {
     // 회원 정보 수정
     @PostMapping("/update")
     public String modifyInfo(HttpSession session, UserVo userVo) {
-        Integer id = (Integer) session.getAttribute("userId");
-        userVo.setMbr_sn(id);
+        Integer sn = (Integer) session.getAttribute("userSn");
+        userVo.setMbr_sn(sn);
         userServiceImpl.modifyInfo(userVo);
         return "redirect:/";
     }
@@ -107,9 +106,9 @@ public class UserController {
     // 회원 탈퇴
     @PostMapping("/delete")
     public String withdraw(HttpSession session) {
-        Integer id = (Integer) session.getAttribute("userId");
-        if (id != null) {
-            userServiceImpl.withdraw(id);
+        Integer sn = (Integer) session.getAttribute("userSn");
+        if (sn != null) {
+            userServiceImpl.withdraw(sn);
         }
         session.invalidate();
         return "redirect:/";

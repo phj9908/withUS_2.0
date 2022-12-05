@@ -14,6 +14,7 @@ public class PostController {
     @Autowired
     private PostService postService;
 
+
     @GetMapping("/post")
     public String toPost() {  //회원가입 페이지
         return "post";
@@ -31,4 +32,6 @@ public class PostController {
         }
         return "redirect:/main";
     }
+
+
 }

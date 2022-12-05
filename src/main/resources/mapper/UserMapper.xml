@@ -40,10 +40,16 @@
         WHERE mbr_id = #{mbr_id}
     </select>
 
-    <select id="getUserById" resultType="com.example.withus.vo.UserVo">
+    <select id="getUserBySn" resultType="com.example.withus.vo.UserVo">
         SELECT *
         FROM tb_user
         WHERE mbr_sn = #{mbr_sn}
+    </select>
+
+    <select id="getUserById" resultType="com.example.withus.vo.UserVo">
+        SELECT *
+        FROM tb_user
+        WHERE mbr_id = #{mbr_id}
     </select>
 
     <!-- 회원정보 수정 -->
