@@ -16,9 +16,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
 
-//    @Autowired
     private final UserMapper userMapper;
-
     public List<UserVo> getUserList(Integer sn) {
         return userMapper.getUserList(sn);
     }

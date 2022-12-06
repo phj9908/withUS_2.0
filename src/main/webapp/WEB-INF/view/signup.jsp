@@ -61,7 +61,7 @@
                     </tr>
                     <tr>
                         <td>생일(선택)</td>
-                        <td><input type = date name = title size=50 required></td>
+                        <td><input type ="date" name = title size=50 required></td>
                     </tr>
                     <tr>
                         <td>이메일(선택)</td>
