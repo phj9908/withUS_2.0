@@ -19,7 +19,7 @@ nav{
     transition: all 800ms cubic-bezier(.8, 0, .33, 1);
     border-radius: 0% 0% 0% 0%;
     z-index: 1000;
-    height: 1400px;
+    height: 100%;
 }
 #leftSlideBar{
     float: left;
@@ -32,7 +32,7 @@ nav{
     float: left;
     border-radius: 0% 0% 0% 0%;
     z-index: 5;
-    height: 1400px;
+    height: 100%;
 }
 nav.nav-open {
     transform: translateX(-100px);
