@@ -6,6 +6,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Sign Up</title>
         <link rel="stylesheet" type="text/css" href="../css/write.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
 
     <body>
@@ -47,7 +48,18 @@
                     </tr>
                     <tr>
                         <td>이메일(선택)</td>
-                        <td><input type="text" name="mbr_email" placeholder="이메일" size=50></td>
+                        <script type="text/javascript" src="/js/email.js" defer></script>
+                        <td>
+                        <input type="text" id="user_email" required><span id="middle">@</span><input type="text" id="email_address" list="user_email_address">
+                        <datalist id="user_email_address">
+                            <option value="naver.com"></option>
+                            <option value="daum.com"></option>
+                            <option value="google.com"></option>
+                            <option value="직접입력"></option>
+                        </datalist>
+                        <input type="hidden" id="mbr_email" name="mbr_email" value="">
+<%--                        <td><input type="text" name="mbr_email" placeholder="이메일" size=50></td>--%>
+                        </td>
                     </tr>
                 </table>
 
