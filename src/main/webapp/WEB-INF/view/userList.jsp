@@ -22,17 +22,17 @@
                 <th>email</th>
             </tr>
             <c:forEach items="${list}" var="u">
-            <tr>
-                <td>${u.mbr_sn}</td>
-                <td>${u.mbr_nm}</td>
-                <td>${u.mbr_nick}</td>
-                <td>${u.mbr_id}</td>
-                <td>${u.password}</td>
-                <td>${u.mbr_date}</td>
-                <td>${u.mbr_gen}</td>
-                <td>${u.mbr_tel}</td>
-                <td>${u.mbr_email}</td>
-            </tr>
+                <tr>
+                    <td>${u.mbr_sn}</td>
+                    <td>${u.mbr_nm}</td>
+                    <td>${u.mbr_nick}</td>
+                    <td>${u.mbr_id}</td>
+                    <td>${u.password}</td>
+                    <td>${u.mbr_date}</td>
+                    <td>${u.mbr_gen}</td>
+                    <td>${u.mbr_tel}</td>
+                    <td>${u.mbr_email}</td>
+                </tr>
             </c:forEach>
         </table>
     </body>
