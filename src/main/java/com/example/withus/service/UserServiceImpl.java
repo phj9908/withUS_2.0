@@ -77,6 +77,11 @@ public class UserServiceImpl implements UserService {
         return null;
     }
     public void modifyInfo(UserVo userVo) {
+        String mbr_id = userVo.getMbr_id();
+        String Password = userVo.getPassword();
+        String enc = encryptPassword(Password, mbr_id);
+        userVo.setPassword(enc);
+        userVo.setMbr_id(mbr_id);
         userMapper.updateUser(userVo);
     }
     public void withdraw(Integer mbr_sn) {

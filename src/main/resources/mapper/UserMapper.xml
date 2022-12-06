@@ -56,12 +56,9 @@
     <!-- 회원정보 수정 -->
     <update id="updateUser" parameterType="com.example.withus.vo.UserVo">
         UPDATE tb_user
-        SET mbr_nm = #{mbr_nm},
-            mbr_nick = #{mbr_nick},
+        SET mbr_nick = #{mbr_nick},
             password = #{password},
-            mbr_date = #{mbr_date},
-            mbr_tel = #{mbr_tel},
-            mbr_email = #{mbr_email}
+            mbr_tel = #{mbr_tel}
         WHERE mbr_sn = #{mbr_sn}
     </update>
 
