@@ -45,8 +45,10 @@
                     </table>
 
                     <center>
-                        <button type="submit">정보 수정</button>
-                        <button type="button" onclick="delOk()">회원 탈퇴</button>
+                        <button type="button" onclick="location.href='update'">정보 수정</button>
+                        <form action="/delete" method="post">
+                            <button type="submit">회원 탈퇴</button>
+                        </form>
                     </center>
                 </td>
             </tr>

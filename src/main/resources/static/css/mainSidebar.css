@@ -142,3 +142,6 @@ a{
 a:hover{
     color: #222;
 }
+button{
+    all:unset;
+}

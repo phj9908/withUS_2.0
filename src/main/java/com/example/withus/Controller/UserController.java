@@ -89,7 +89,7 @@ public class UserController {
     @PostMapping("/logout")
     public String logout(HttpSession session) {
         session.invalidate();
-        return "login";
+        return "redirect:/";
     }
 
     // 회원 정보 수정 페이지
@@ -107,7 +107,7 @@ public class UserController {
         Integer sn = (Integer) session.getAttribute("userSn");
         userVo.setMbr_sn(sn);
         userServiceImpl.modifyInfo(userVo);
-        return "redirect:/";
+        return "redirect:/mypage";
     }
 
     // 회원 탈퇴

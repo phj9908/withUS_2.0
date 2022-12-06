@@ -46,7 +46,9 @@
                     <a href="" class="link">Calendar / D-day</a>
                     <a href="" class="link">Message</a>
                     <a href="http://localhost:8080/post" class="link">Post Test</a>
-                    <a href="" class="link">로그아웃</a>
+                    <form action="/logout" method="post">
+                        <button type="submit" class="link" all="unset">로그아웃</button>
+                    </form>
                 </div>
             </nav>
 
