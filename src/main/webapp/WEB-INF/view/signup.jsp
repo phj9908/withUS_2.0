@@ -7,6 +7,30 @@
         <title>Sign Up</title>
     </head>
 
+    <style>
+        table.table2{
+            border-collapse: separate;
+            border-spacing: 1px;
+            text-align: left;
+            line-height: 1.5;
+            border-top: 1px solid #ccc;
+            margin : 20px 10px;
+        }
+        table.table2 tr {
+            width: 50px;
+            padding: 10px;
+            font-weight: bold;
+            vertical-align: top;
+            border-bottom: 1px solid #ccc;
+        }
+        table.table2 td {
+            width: 100px;
+            padding: 10px;
+            vertical-align: top;
+            border-bottom: 1px solid #ccc;
+        }
+    </style>
+
     <body>
         <table  style="padding-top:50px" align = center width=550 border=0 cellpadding=2>
         <tr>
@@ -42,7 +66,7 @@
                     </tr>
                     <tr>
                         <td>생일(선택)</td>
-                        <td><input type="text" name="mbr_date" placeholder="생일" size=50></td>
+                        <td><input type = date name = title size=50 required></td>
                     </tr>
                     <tr>
                         <td>이메일(선택)</td>

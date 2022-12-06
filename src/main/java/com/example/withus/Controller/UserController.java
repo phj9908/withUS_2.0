@@ -21,8 +21,6 @@ import java.util.List;
 @Controller
 @RequiredArgsConstructor
 public class UserController {
-
-//    @Autowired
     private final UserServiceImpl userServiceImpl;
 
     @GetMapping("/signup")
@@ -84,7 +82,6 @@ public class UserController {
         } else {
             System.out.println(mbrSn);
         }
-
         return "redirect:/main";
     }
 
@@ -92,7 +89,7 @@ public class UserController {
     @PostMapping("/logout")
     public String logout(HttpSession session) {
         session.invalidate();
-        return "redirect:/";
+        return "login";
     }
 
     // 회원 정보 수정 페이지

@@ -7,33 +7,72 @@
         <title>User List</title>
     </head>
 
+    <style>
+        table.table2{
+            border-collapse: separate;
+            border-spacing: 1px;
+            text-align: left;
+            line-height: 1.5;
+            border-top: 1px solid #ccc;
+            margin : 20px 10px;
+        }
+        table.table2 tr {
+            width: 50px;
+            padding: 10px;
+            font-weight: bold;
+            vertical-align: top;
+            border-bottom: 1px solid #ccc;
+        }
+        table.table2 td {
+            width: 100px;
+            padding: 10px;
+            vertical-align: top;
+            border-bottom: 1px solid #ccc;
+        }
+    </style>
+
     <body>
-        <h2>User List</h2>
-        <table>
+        <table  style="padding-top:50px" align = center width=550 border=0 cellpadding=2>
             <tr>
-                <th>sn</th>
-                <th>name</th>
-                <th>username</th>
-                <th>id</th>
-                <th>password</th>
-                <th>date</th>
-                <th>gen</th>
-                <th>tel</th>
-                <th>email</th>
+                <td height=20 align= center bgcolor=#FCDDB0><font color=white></font></td>
             </tr>
-            <c:forEach items="${list}" var="u">
-                <tr>
-                    <td>${u.mbr_sn}</td>
-                    <td>${u.mbr_nm}</td>
-                    <td>${u.mbr_nick}</td>
-                    <td>${u.mbr_id}</td>
-                    <td>${u.password}</td>
-                    <td>${u.mbr_date}</td>
-                    <td>${u.mbr_gen}</td>
-                    <td>${u.mbr_tel}</td>
-                    <td>${u.mbr_email}</td>
-                </tr>
-            </c:forEach>
+            <tr>
+                <td bgcolor=white>
+                    <table class = "table2" align=center>
+                        <c:forEach items="${list}" var="u">
+                            <tr>
+                                <td>이름</td>
+                                <td>${u.mbr_nm}</td>
+                            </tr>
+                            <tr>
+                                <td>닉네임</td>
+                                <td>${u.mbr_nick}</td>
+                            </tr>
+                            <tr>
+                                <td>성별</td>
+                                <td>${u.mbr_gen}</td>
+                            </tr>
+                            <tr>
+                                <td>전화번호</td>
+                                <td>${u.mbr_tel}</td>
+                            </tr>
+                            <tr>
+                                <td>생일</td>
+                                <td>${u.mbr_date}</td>
+                            </tr>
+                            <tr>
+                                <td>이메일</td>
+                                <td>${u.mbr_email}</td>
+                            </tr>
+                        </c:forEach>
+                    </table>
+
+                    <center>
+                        <button type="submit">정보 수정</button>
+                        <button type="button" onclick="delOk()">회원 탈퇴</button>
+                    </center>
+                </td>
+            </tr>
         </table>
     </body>
 </html>

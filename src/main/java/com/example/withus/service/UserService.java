@@ -6,9 +6,7 @@ import com.example.withus.vo.UserVo;
 public interface UserService {
 
     void signUp(UserVo userVo);
-
     LoginResponse login(UserVo userVo);
-
     Integer getMbrSn(String mbr_id, String password);
 
 }

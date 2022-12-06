@@ -30,14 +30,11 @@ public class UserServiceImpl implements UserService {
     public void signUp(UserVo userVo) {
         String mbr_id = userVo.getMbr_id();
         String Password = userVo.getPassword();
-
-
         String enc = encryptPassword(Password, mbr_id);
         userVo.setPassword(enc);
         userVo.setMbr_id(mbr_id);
         userMapper.insertUser(userVo);
     }
-
     public LoginResponse login(UserVo userVo) {
         UserVo loginMember = userMapper.getUserByEmail(userVo);
         LoginResponse loginResponse = new LoginResponse();
@@ -66,7 +63,6 @@ public class UserServiceImpl implements UserService {
         }
         return loginResponse;
     }
-
     @Override
     public Integer getMbrSn(String mbr_id, String password) {
         UserVo userVo = userMapper.getUserById(mbr_id);
@@ -82,7 +78,6 @@ public class UserServiceImpl implements UserService {
         }
         return null;
     }
-
     public void modifyInfo(UserVo userVo) {
         userMapper.updateUser(userVo);
     }
@@ -112,7 +107,7 @@ public class UserServiceImpl implements UserService {
         return new String(Base64.encodeBase64(hashValue));
     }
 
-    //비밀번호 암호화된거로 로그인
+    // 비밀번호 암호화 상태로 로그인
     public static boolean comparePassword(String password, String encryptPassword, String mbr_id) {
         return encryptPassword(password, mbr_id).equals(encryptPassword);
     }

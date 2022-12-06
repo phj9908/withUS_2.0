@@ -10,10 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class PostController {
-
     @Autowired
     private PostService postService;
-
 
     @GetMapping("/post")
     public String toPost() {  //회원가입 페이지

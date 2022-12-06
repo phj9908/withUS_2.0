@@ -4,7 +4,6 @@ var infoWindow;
 var markerList=[];
 var menuLayer = $('<div style="position:absolute;z-index:10000;background-color:#fff;border:solid 1px #333;padding:10px;display:none;"></div>');
 var address;
-// var isClick = false;
 
 function map() {
 

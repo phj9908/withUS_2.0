@@ -19,7 +19,7 @@
             $(document).ready(function(){
                 // 글 작성하기 부분
                 $("#test-button").click(function(){
-                    //$("p").hide();
+                    //$("p").hide();asdf
                 });
             });
         </script>
@@ -46,6 +46,7 @@
                     <a href="" class="link">Calendar / D-day</a>
                     <a href="" class="link">Message</a>
                     <a href="http://localhost:8080/post" class="link">Post Test</a>
+                    <a href="" class="link">로그아웃</a>
                 </div>
             </nav>
 

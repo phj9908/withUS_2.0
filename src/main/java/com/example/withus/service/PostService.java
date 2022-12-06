@@ -13,11 +13,6 @@ import java.util.List;
 public class PostService {
     @Autowired
     private PostMapper postMapper;
-    private UserMapper userMapper;
-
-    public List<PostVo> getPostList() {
-        return postMapper.getPostList();
-    }
     public void upload(PostVo postVo) {
         postMapper.insertPost(postVo);
     }
