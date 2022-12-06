@@ -7,6 +7,17 @@
         <title>Sign Up</title>
         <link rel="stylesheet" type="text/css" href="../css/write.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <style>
+            .id_ok{
+                color: #57a9ef;
+                display: none;
+            }
+
+            .id_already{
+                color: #fb6ad2;
+                display: none;
+            }
+        </style>
     </head>
 
     <body>
@@ -20,7 +31,13 @@
                 <table class = "table2" align=center>
                     <tr>
                         <td>아이디</td>
-                        <td><input type="text" name="mbr_id" placeholder="아이디" size=50 required></td>
+                        <script type="text/javascript" src="/js/id.js" defer></script>
+                        <td>
+                            <input type="text" id="mbr_id" name="mbr_id" placeholder="아이디" size=50 oninput="checkId()">
+                            <!-- id ajax 중복체크 -->
+                            <span class="id_ok">사용가능한 아이디입니다..</span>
+                            <span class="id_already">이미 사용중인 아이디입니다.</span>
+                        </td>
                     </tr>
                     <tr>
                         <td>비밀번호</td>

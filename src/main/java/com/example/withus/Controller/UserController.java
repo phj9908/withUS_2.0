@@ -11,9 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
@@ -126,5 +124,18 @@ public class UserController {
         List<UserVo> userList = userServiceImpl.getUserList(sn);
         model.addAttribute("list", userList);
         return "userList";
+    }
+    @Autowired
+    private UserService userService;
+
+
+    //아이디 중복체크
+    @PostMapping("/idCheck")
+    @ResponseBody
+    public int idCheck(@RequestParam(value = "mbr_id") String mbr_id) {
+
+        int cnt = userService.idCheck(mbr_id);
+        return cnt;
+
     }
 }

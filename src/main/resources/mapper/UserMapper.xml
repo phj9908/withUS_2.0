@@ -71,4 +71,10 @@
         FROM tb_user
         WHERE mbr_sn = #{mbr_sn}
     </delete>
+
+    <!-- 아이디 중복 체크 -->
+    <select id="idCheck" parameterType="String" resultType="int">
+        SELECT COUNT(mbr_id) FROM tb_user WHERE mbr_id= #{mbr_id}
+    </select>
+
 </mapper>

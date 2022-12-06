@@ -111,4 +111,15 @@ public class UserServiceImpl implements UserService {
     public static boolean comparePassword(String password, String encryptPassword, String mbr_id) {
         return encryptPassword(password, mbr_id).equals(encryptPassword);
     }
+
+    @Autowired
+    private UserMapper mapper;
+
+    //아이디 중복체크 mapper 접근
+    @Override
+    public int idCheck(String mbr_id) {
+        int cnt = mapper.idCheck(mbr_id);
+//        System.out.println("cnt: " + cnt);
+        return cnt;
+    }
 }
