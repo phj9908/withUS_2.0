@@ -125,7 +125,8 @@ public class UserController {
     }
     @GetMapping("/mypage")
     public String myPage(HttpSession session, Model model) {
-        List<UserVo> userList = userServiceImpl.getUserList();
+        Integer sn = (Integer) session.getAttribute("userSn");
+        List<UserVo> userList = userServiceImpl.getUserList(sn);
         model.addAttribute("list", userList);
         return "userList";
     }

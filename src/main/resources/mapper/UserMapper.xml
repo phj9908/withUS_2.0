@@ -5,6 +5,7 @@
     <select id="getUserList" resultType="com.example.withus.vo.UserVo">
         SELECT *
         FROM tb_user
+        WHERE mbr_sn = #{sn}
     </select>
 
     <!-- 회원가입 -->
