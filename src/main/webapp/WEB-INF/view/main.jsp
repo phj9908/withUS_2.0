@@ -67,15 +67,19 @@
                     </div>
                 </div>
             </div>
+
             <nav id="select">
-                <div id = locationTitle></div>
-                <ul>
-                    <li id =category_name></li>
-                    <li id =place_url></li>
-                    <li id =phone></li>
-                    <li id =distance></li>
-                </ul>
-                <button type="button" id="writeBtn">글 작성하기</button>
+            <%--지도 정보--%>
+<%--                <div id = locationTitle></div>--%>
+<%--                <ul>--%>
+<%--                    <li id =category_name></li>--%>
+<%--                    <li id =place_url></li>--%>
+<%--                    <li id =phone></li>--%>
+<%--                    <li id =distance></li>--%>
+<%--                </ul>--%>
+<%--                <button type="button" id="writeBtn">글 작성하기</button>--%>
+
+            <%--스토리--%>
             </nav>
 
             <!--
