@@ -68,7 +68,7 @@
                 </div>
             </div>
 
-            <nav id="select">
+            <nav id="sub">
             <%--지도 정보--%>
 <%--                <div id = locationTitle></div>--%>
 <%--                <ul>--%>
