@@ -75,7 +75,7 @@
                     <li id =phone></li>
                     <li id =distance></li>
                 </ul>
-                <button id="writeBtn" style="display: none">글 작성하기</button>
+                <button type="button" id="writeBtn">글 작성하기</button>
             </nav>
 
             <!--

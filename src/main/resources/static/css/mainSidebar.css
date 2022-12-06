@@ -13,7 +13,7 @@ nav{
     overflow: hidden;
     position: relative;
     float: left;
-    transform: translateX(-300px);
+    transform: translateX(-400px);
     background-color: #FCDDB0;
     width: 400px;
     transition: all 800ms cubic-bezier(.8, 0, .33, 1);
@@ -35,7 +35,7 @@ nav{
     height: 1400px;
 }
 nav.nav-open {
-    transform: translateX(0px);
+    transform: translateX(-100px);
     border-radius: 0% 0% 0% 0%;
     background: #FF9F9F;
 }
