@@ -95,6 +95,8 @@ li {
     border-bottom: #ffffff;
     background-color: #ffffff;
 }
+
+/* 검색창 */
 .search {
     position: relative;
     width: 300px;
