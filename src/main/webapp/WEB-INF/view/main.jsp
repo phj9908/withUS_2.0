@@ -19,6 +19,8 @@
         <script src="/js/mainSidebar.js" defer></script>
         <script src="/js/mainSub.js" defer></script>
         <script src="/js/mainSearch.js" defer></script>
+        <script src="../js/mainMap.js"></script>
+
         <script>
             $(document).ready(function(){
                 // 글 작성하기 부분
@@ -35,7 +37,6 @@
                 <div id="map"></div>
                 <code id="snippet" class="snippet"></code>
             </div>
-            <script src="../js/mainMap.js"></script>
 
             <nav id ="leftSlideBar">
                 <div class="menu-btn">
@@ -60,16 +61,23 @@
             <div class="area">
                 <div class="accordion">
                     <div class="accordion_item">
-                        <div class="search">
-                            <input type="text" placeholder="검색어 입력">
-                            <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png">
-                        </div>
+                        <form onsubmit="searchPlaces(); return false;">
+                            <div class="search">
+                                <input type="text" placeholder="검색어 입력">
+                                <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png">
+                                <button type="submit">검색하기</button>
+                            </div>
+                        </form>
+
                         <div class="accordion_content">
                             <ul>
-                                <li>그룹1</li>
-                                <li>그룹2</li>
-                                <li>그룹3</li>
-                                <li>그룹4</li>
+<%--                                <li>그룹1</li>--%>
+<%--                                <li>그룹2</li>--%>
+<%--                                <li>그룹3</li>--%>
+<%--                                <li>그룹4</li>--%>
+                                <hr>
+                                <ul id="placesList"></ul>
+                                <div id="pagination"></div>
                             </ul>
                         </div>
                     </div>
