@@ -18,7 +18,7 @@ public class UserVo {
     private String password;
     private String mbr_nm;
     private String mbr_nick;
-    private Date mbr_date;
+    private String mbr_date;
     private String mbr_gen;
     private String mbr_tel;
     private String mbr_email;
