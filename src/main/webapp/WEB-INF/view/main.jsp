@@ -45,11 +45,11 @@
                 </div>
 
                 <div class="nav-links">
-                    <a href="http://localhost:8080/mypage" class="link">My page</a>
+                    <a href="/mypage" class="link">My page</a>
                     <a href="" class="link" id="btn-story">Story</a>
-                    <a href="" class="link">Calendar / D-day</a>
+                    <a href="/date" class="link">Calendar / D-day</a>
                     <a href="" class="link">Message</a>
-                    <a href="http://localhost:8080/post" class="link">Post Test</a>
+                    <a href="/post" class="link">Post Test</a>
                     <form action="/logout" method="post">
                         <button type="submit" class="link" all="unset">로그아웃</button>
                     </form>

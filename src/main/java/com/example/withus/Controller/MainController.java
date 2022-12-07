@@ -20,4 +20,9 @@ public class MainController {
     public String postPage() {
         return "post";
     }
+
+    @RequestMapping("/date")
+    public String datePage() {
+        return "date";
+    }
 }
