@@ -14,11 +14,11 @@
         <link rel="stylesheet" type="text/css" href="../css/mainMap.css" />
         <link rel="stylesheet" type="text/css" href="/css/mainSidebar.css">
         <link rel="stylesheet" type="text/css" href="/css/mainSub.css">
-        <link rel="stylesheet" type="text/css" href="/css/groupAccordion.css">
+        <link rel="stylesheet" type="text/css" href="/css/searchAccordion.css">
 
         <script src="/js/mainSidebar.js" defer></script>
         <script src="/js/mainSub.js" defer></script>
-        <script src="/js/groupAccordion.js" defer></script>
+        <script src="/js/searchAccordion.js" defer></script>
         <script>
             $(document).ready(function(){
                 // 글 작성하기 부분
@@ -57,21 +57,24 @@
             </nav>
 
             <!-- 아코디언 -->
-<%--            <div class="area">--%>
-<%--                <div class="accordion">--%>
-<%--                    <div class="accordion_item open">--%>
-<%--                        <button>그룹</button>--%>
-<%--                        <div class="accordion_content">--%>
-<%--                            <ul>--%>
-<%--                                <li>그룹1</li>--%>
-<%--                                <li>그룹2</li>--%>
-<%--                                <li>그룹3</li>--%>
-<%--                                <li>그룹4</li>--%>
-<%--                            </ul>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--            </div>--%>
+            <div class="area">
+                <div class="accordion">
+                    <div class="accordion_item">
+                        <div class="search">
+                            <input type="text" placeholder="검색어 입력">
+                            <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png">
+                        </div>
+                        <div class="accordion_content">
+                            <ul>
+                                <li>그룹1</li>
+                                <li>그룹2</li>
+                                <li>그룹3</li>
+                                <li>그룹4</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!--지도 정보-->
 <%--            <nav id="sub">--%>
