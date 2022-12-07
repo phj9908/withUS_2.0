@@ -71,10 +71,10 @@ public class UserServiceImpl implements UserService {
         loginResponse.setLoginMember(loginMember);
         loginResponse.setSuccess(true);
 
-        if (loginResponse.isSuccess()) {
-            return userVo.getMbr_sn();
+        if (false == loginResponse.isSuccess()) {
+            return 0;
         }
-        return null;
+        return userVo.getMbr_sn();
     }
     public void modifyInfo(UserVo userVo) {
         String mbr_id = userVo.getMbr_id();

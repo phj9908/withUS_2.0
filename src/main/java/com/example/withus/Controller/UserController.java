@@ -56,7 +56,7 @@ public class UserController {
     public String login(UserVo userVo, ModelMap model, HttpSession session) {
         String mbrId = userVo.getMbr_id();
         String mbrPswd = userVo.getPassword();
-        Integer mbrSn = userServiceImpl.getMbrSn(mbrId, mbrPswd);
+
 
         // 유효성 검사
         if (StringUtils.isEmpty(mbrId) || StringUtils.isEmpty(mbrPswd)) {
@@ -70,16 +70,16 @@ public class UserController {
         if (!loginResponse.isSuccess()) {
             model.addAttribute("message", loginResponse.getMessage());
             return "login";
-        }
-
-        session.setAttribute("userId", loginResponse);
-        session.setAttribute("userSn", mbrSn);
-
-        if(mbrSn == null){
-            System.out.println("Null");
         } else {
-            System.out.println(mbrSn);
+            Integer mbrSn = userServiceImpl.getMbrSn(mbrId, mbrPswd);
+            session.setAttribute("userSn", mbrSn);
+
         }
+        session.setAttribute("userId", loginResponse);
+
+
+
+
         return "redirect:/main";
     }
 

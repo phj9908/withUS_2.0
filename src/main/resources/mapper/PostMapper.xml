@@ -12,12 +12,14 @@
     <insert id="insertPost" parameterType="com.example.withus.vo.PostVo">
         INSERT INTO tb_txt
         (
+            mbr_sn,
             txt_nm,
             txt_cn,
             test_nm
         )
         VALUES
             (
+                #{mbr_sn},
                 #{txt_nm},
                 #{txt_cn},
                 #{test_nm}

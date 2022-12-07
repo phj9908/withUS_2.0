@@ -33,9 +33,11 @@
                                 <td>내용</td>
                                 <td><textarea type="text" name ="txt_cn" cols=85 rows=15 required></textarea></td>
                             </tr>
+
                         </table>
 
                         <center>
+                            <input type="hidden" name = "mbr_sn" value ="${user.mbr_sn}" required>
                             <button type="button" onclick="delOk()">이전으로</button>
                             <button type="submit">작성하기</button>
                         </center>
