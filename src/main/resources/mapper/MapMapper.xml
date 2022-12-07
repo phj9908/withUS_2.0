@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.withus.mapper.MapMapper">
+    <!-- 테이블 가져오기 -->
+    <select id="getMapList" resultType="com.example.withus.vo.MapVo">
+        SELECT *
+        FROM tb_map
+        WHERE map_sn = #{mapListGroup}
+    </select>
+
+    <!-- 게시물 작성 -->
+    <insert id="insertMap" parameterType="com.example.withus.vo.MapVo">
+        INSERT INTO tb_map
+        (
+            map_sn,
+            mbr_sn,
+            map_la,
+            map_lo
+        )
+        VALUES
+            (
+                #{map_sn},
+                #{mbr_sn},
+                #{map_la},
+                #{map_lo}
+            )
+    </insert>
+</mapper>
