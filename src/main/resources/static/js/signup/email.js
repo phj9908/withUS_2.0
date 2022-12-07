@@ -1,4 +1,3 @@
-//이메일주소 가져오기
 $("#user_email").blur(function(){
     email();
 });

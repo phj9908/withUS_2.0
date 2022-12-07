@@ -29,7 +29,7 @@
     <tr>
         <td bgcolor=white>
             <form action="/signup" method="post">
-                <table class = "table2" style="word-wrap:break-word; width:550px; align:center">
+                <table class = "table2" style="word-wrap:break-word; width:570px; align:center">
                     <tr>
                         <td>아이디</td>
                         <script type="text/javascript" src="/js/signup/id.js" defer></script>
@@ -43,16 +43,14 @@
                     </tr>
                     <tr>
                         <td>비밀번호</td>
-                        <td><input type="password" id="password" name="password" placeholder="비밀번호" size=50 oninput="checkPassword()" required></td>
+                        <td><input type="password" id="password" name="password" placeholder="비밀번호" size=50 onchange="checkPassword()" required></td>
                     </tr>
                     <tr>
                         <td>비밀번호 확인</td>
                         <script type="text/javascript" src="/js/signup/password.js" defer></script>
                         <td>
-                            <input type="password" id="password2" name="password2" placeholder="비밀번호 확인" oninput="checkPassword()" size=50 required><br>
+                            <input type="password" id="password2" name="password2" placeholder="비밀번호 확인" onchange="checkPassword2()" size=50 required><br>
                             <span id="check"></span>
-                            <%--                            <span class="password_no">비번 다르자나</span>--%>
-                            <%--                            <span class="password_ok">비번 똑같다</span>--%>
                         </td>
 
                     </tr>
@@ -74,18 +72,18 @@
                     </tr>
                     <tr>
                         <td>전화번호</td>
-                        <script type="text/javascript" src="/js/signup/tel.js" defer></script>
-                        <td>
-                            <span id="zero">010</span><span id="middle1">-</span><input type="text" id="fir_number" required><span id="middle2">-</span><input type="text" id="sec_number" required>
-                            <input type="hidden" id="mbr_tel" name="mbr_tel" value="">
-                            <%--                        <td><input type="text" name="mbr_tel" placeholder="전화번호" size=50 required></td>--%>
-                        </td>
+                        <%--                        <script type="text/javascript" src="/js/signup/tel.js" defer></script>--%>
+                        <%--                        <td>--%>
+                        <%--                            <span id="zero">010</span><span id="middle1">-</span><input type="text" id="fir_number" oninput="handleInputLength(this, 4)" required><span id="middle2">-</span><input type="text" id="sec_number" oninput="handleInputLength(this, 4)" required>--%>
+                        <%--                            <input type="hidden" id="mbr_tel" name="mbr_tel" value="">--%>
+                        <%--                        </td>--%>
+                        <td><input type="text" name="mbr_tel" placeholder="전화번호(-를 제외하시오)" size=50 required></td>
                     </tr>
                     <tr>
                         <td>생일(선택)</td>
                         <script type="text/javascript" src="/js/signup/date.js" defer></script>
                         <td>
-                            <input type="text" name="yy" id="yy" placeholder="년(4자)">
+                            <input type="text" name="yy" id="yy" placeholder="년(4자)" oninput="handleInputLength(this, 4)">
                             <select id="mm", name="mm">
                                 <option value="">월</option>
                                 <option value="01" >1</option>
@@ -101,7 +99,7 @@
                                 <option value="11" >11</option>
                                 <option value="12" >12</option>
                             </select>
-                            <input type="text" name="dd" id="dd" placeholder="일">
+                            <input type="text" name="dd" id="dd" placeholder="일" oninput="handleInputLength(this, 2)">
                             <input type="hidden" id="mbr_date" name="mbr_date" value="">
                         </td>
                     </tr>
@@ -109,7 +107,7 @@
                         <td>이메일(선택)</td>
                         <script type="text/javascript" src="/js/signup/email.js" defer></script>
                         <td>
-                            <input type="text" id="user_email"><span id="middle">@</span><input type="text" id="email_address" list="user_email_address">
+                            <input type="text" id="user_email"><span id="middle">@</span><input type="text" id="email_address" list="user_email_address" placeholder="ex) naver.com">
                             <datalist id="user_email_address">
                                 <option value="naver.com"></option>
                                 <option value="daum.com"></option>
@@ -143,7 +141,11 @@
     }
 </script>
 <script>
-
+    function handleInputLength(el, max) {
+        if(el.value.length > max) {
+            el.value = el.value.substr(0, max);
+        }
+    }
 </script>
 </body>
 </html>
