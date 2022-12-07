@@ -23,17 +23,16 @@
                             </tr>
                             <tr>
                                 <td>날짜</td>
-                                <td><input type = date name = title size=50 required></td>
+                                <td><input type = date name = title size=50></td>
                             </tr>
                             <tr>
                                 <td>사진</td>
-                                <td><input type="file" class="real-upload" accept="image/*" required multiple></td>
+                                <td><input type="file" class="real-upload" accept="image/*"></td>
                             </tr>
                             <tr>
                                 <td>내용</td>
                                 <td><textarea type="text" name ="txt_cn" cols=85 rows=15 required></textarea></td>
                             </tr>
-
                         </table>
 
                         <center>

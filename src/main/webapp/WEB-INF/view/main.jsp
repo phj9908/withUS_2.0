@@ -14,11 +14,11 @@
         <link rel="stylesheet" type="text/css" href="../css/mainMap.css" />
         <link rel="stylesheet" type="text/css" href="/css/mainSidebar.css">
         <link rel="stylesheet" type="text/css" href="/css/mainSub.css">
-        <link rel="stylesheet" type="text/css" href="/css/searchAccordion.css">
+        <link rel="stylesheet" type="text/css" href="/css/mainSearch.css">
 
         <script src="/js/mainSidebar.js" defer></script>
         <script src="/js/mainSub.js" defer></script>
-        <script src="/js/searchAccordion.js" defer></script>
+        <script src="/js/mainSearch.js" defer></script>
         <script>
             $(document).ready(function(){
                 // 글 작성하기 부분
