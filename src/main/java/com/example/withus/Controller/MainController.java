@@ -25,6 +25,4 @@ public class MainController {
     public String datePage() {
         return "date";
     }
-
-    // 이유진
 }
