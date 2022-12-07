@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.naming.directory.SearchControls;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Data
@@ -21,4 +22,6 @@ public class UserVo {
     private String mbr_gen;
     private String mbr_tel;
     private String mbr_email;
+    private String rgtr_id;
+    private LocalDateTime rgtr_dt;
 }

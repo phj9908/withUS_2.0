@@ -29,12 +29,12 @@
     <tr>
         <td bgcolor=white>
             <form action="/signup" method="post">
-                <table class = "table2" width=530 align=center>
+                <table class = "table2" style="word-wrap:break-word; width:550px; align:center">
                     <tr>
                         <td>아이디</td>
-                        <script type="text/javascript" src="/js/id.js" defer></script>
+                        <script type="text/javascript" src="/js/signup/id.js" defer></script>
                         <td>
-                            <input type="text" id="mbr_id" name="mbr_id" placeholder="아이디" size=50 oninput="checkId()" required>
+                            <input type="text" id="mbr_id" name="mbr_id" placeholder="아이디" size=50 oninput="checkId()" required><br>
                             <!-- id ajax 중복체크 -->
                             <span class="id_ok">사용가능한 아이디입니다.</span>
                             <span class="id_already">이미 사용중인 아이디입니다.</span>
@@ -43,7 +43,18 @@
                     </tr>
                     <tr>
                         <td>비밀번호</td>
-                        <td><input type="password" name="password" placeholder="비밀번호" size=50 required></td>
+                        <td><input type="password" id="password" name="password" placeholder="비밀번호" size=50 oninput="checkPassword()" required></td>
+                    </tr>
+                    <tr>
+                        <td>비밀번호 확인</td>
+                        <script type="text/javascript" src="/js/signup/password.js" defer></script>
+                        <td>
+                            <input type="password" id="password2" name="password2" placeholder="비밀번호 확인" oninput="checkPassword()" size=50 required><br>
+                            <span id="check"></span>
+                            <%--                            <span class="password_no">비번 다르자나</span>--%>
+                            <%--                            <span class="password_ok">비번 똑같다</span>--%>
+                        </td>
+
                     </tr>
                     <tr>
                         <td>이름</td>
@@ -63,7 +74,7 @@
                     </tr>
                     <tr>
                         <td>전화번호</td>
-                        <script type="text/javascript" src="/js/tel.js" defer></script>
+                        <script type="text/javascript" src="/js/signup/tel.js" defer></script>
                         <td>
                             <span id="zero">010</span><span id="middle1">-</span><input type="text" id="fir_number" required><span id="middle2">-</span><input type="text" id="sec_number" required>
                             <input type="hidden" id="mbr_tel" name="mbr_tel" value="">
@@ -72,17 +83,37 @@
                     </tr>
                     <tr>
                         <td>생일(선택)</td>
-                        <td><input type ="date" name="????????" size=50></td>
+                        <script type="text/javascript" src="/js/signup/date.js" defer></script>
+                        <td>
+                            <input type="text" name="yy" id="yy" placeholder="년(4자)">
+                            <select id="mm", name="mm">
+                                <option value="">월</option>
+                                <option value="01" >1</option>
+                                <option value="02" >2</option>
+                                <option value="03" >3</option>
+                                <option value="04" >4</option>
+                                <option value="05" >5</option>
+                                <option value="06" >6</option>
+                                <option value="07" >7</option>
+                                <option value="08" >8</option>
+                                <option value="09" >9</option>
+                                <option value="10" >10</option>
+                                <option value="11" >11</option>
+                                <option value="12" >12</option>
+                            </select>
+                            <input type="text" name="dd" id="dd" placeholder="일">
+                            <input type="hidden" id="mbr_date" name="mbr_date" value="">
+                        </td>
                     </tr>
                     <tr>
                         <td>이메일(선택)</td>
-                        <script type="text/javascript" src="/js/email.js" defer></script>
+                        <script type="text/javascript" src="/js/signup/email.js" defer></script>
                         <td>
                             <input type="text" id="user_email"><span id="middle">@</span><input type="text" id="email_address" list="user_email_address">
                             <datalist id="user_email_address">
                                 <option value="naver.com"></option>
                                 <option value="daum.com"></option>
-                                <option value="google.com"></option>
+                                <option value="gmail.com"></option>
                                 <option value="직접입력"></option>
                             </datalist>
                             <input type="hidden" id="mbr_email" name="mbr_email" value="">
