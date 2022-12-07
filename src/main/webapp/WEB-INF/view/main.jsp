@@ -69,7 +69,7 @@
             </div>
 
             <nav id="sub">
-            <%--지도 정보--%>
+<%--            지도 정보--%>
 <%--                <div id = locationTitle></div>--%>
 <%--                <ul>--%>
 <%--                    <li id =category_name></li>--%>
@@ -79,7 +79,15 @@
 <%--                </ul>--%>
 <%--                <button type="button" id="writeBtn">글 작성하기</button>--%>
 
-            <%--스토리--%>
+<%--            스토리--%>
+                <c:forEach items="${postlist}" var="p">
+                    <ul class="sub-ul">
+                        <li>[제목]</li>
+                        <li>${p.txt_nm}</li>
+                        <li>[작성일]</li>
+<%--                    <li>${}</li>--%>
+                    </ul>
+                </c:forEach>
             </nav>
 
             <!--
@@ -93,7 +101,7 @@
             -->
 
             <script defer>
-                //아코디언 클릭 이벤트 정의
+                // 아코디언 클릭 이벤트 정의
                 document.querySelectorAll('.accordion .accordion_item > button').forEach((btn) => {
                     btn.addEventListener('click', (e) => {
                         let accordion_item = e.currentTarget.parentNode;

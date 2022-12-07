@@ -5,6 +5,7 @@
     <select id="getPostList" resultType="com.example.withus.vo.PostVo">
         SELECT *
         FROM tb_txt
+        WHERE test_nm = #{group}
     </select>
 
     <!-- 게시물 작성 -->
@@ -12,12 +13,14 @@
         INSERT INTO tb_txt
         (
             txt_nm,
-            txt_cn
+            txt_cn,
+            test_nm
         )
         VALUES
             (
                 #{txt_nm},
-                #{txt_cn}
+                #{txt_cn},
+                #{test_nm}
             )
     </insert>
 </mapper>
