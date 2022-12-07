@@ -39,7 +39,6 @@ public class PostController {
     public String postList(Model model) {
         Integer group = 1;
         List<PostVo> postList = postServiceImpl.getPostList(group);
-        System.out.println(postList);
         model.addAttribute("postlist", postList);
         return "main";
     }

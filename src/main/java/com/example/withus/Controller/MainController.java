@@ -10,6 +10,7 @@ public class MainController {
 
     @Autowired
     private UserService userService;
+
     @RequestMapping("/")
     public String firstPage() {
         return "first";

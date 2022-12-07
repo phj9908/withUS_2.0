@@ -16,10 +16,10 @@ nav{
     transform: translateX(-400px);
     background-color: #FCDDB0;
     width: 400px;
+    height: 100%;
     transition: all 800ms cubic-bezier(.8, 0, .33, 1);
     border-radius: 0% 0% 0% 0%;
     z-index: 1000;
-    height: 100%;
 }
 #leftSlideBar{
     float: left;

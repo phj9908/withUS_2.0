@@ -1,4 +1,4 @@
-#sub {
+.sub {
     background-color: #FF9F9F;
     height: 100%;
     width: 460px;
@@ -7,7 +7,37 @@
     position: relative;
     transform: translateX(0px);
 }
-.sub-ul {
+.story {
+    overflow: hidden;
+    background-color: #FF9F9F;
+    height: 100%;
+    width: 460px;
+    border-radius: 0% 0% 0% 0%;
+    float: right;
+    position: relative;
+    transform: translateX(460px);
+}
+.story.story-open {
+    overflow: hidden;
+    background-color: #FF9F9F;
+    height: 100%;
+    width: 460px;
+    border-radius: 0% 0% 0% 0%;
+    float: right;
+    position: relative;
+    transform: translateX(0px);
+}
+.test-story {
+    overflow: hidden;
+    background-color: #FF9F9F;
+    height: 100%;
+    width: 460px;
+    border-radius: 0% 0% 0% 0%;
+    float: right;
+    position: relative;
+    transform: translateX(0px);
+}
+.story-ul {
     background-color: #FFFFFF;
     margin-top: 20px;
     margin-bottom: 20px;
