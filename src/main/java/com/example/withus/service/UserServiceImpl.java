@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -31,6 +32,9 @@ public class UserServiceImpl implements UserService {
         String enc = encryptPassword(Password, mbr_id);
         userVo.setPassword(enc);
         userVo.setMbr_id(mbr_id);
+        userVo.setRgtr_id(mbr_id);
+        userVo.setRgtr_dt(LocalDateTime.now());
+
         userMapper.insertUser(userVo);
     }
     public LoginResponse login(UserVo userVo) {
@@ -44,16 +48,33 @@ public class UserServiceImpl implements UserService {
                 loginResponse.setMessage("회원정보가 없습니다.");
                 return loginResponse;
             }
+            // 잠금 처리된 회원인 경우
+            if(loginMember.getLock_yn().equals("Y")) {
+                loginResponse.setSuccess(false);
+                loginResponse.setMessage("잠금 처리된 계정입니다. 관리자에게 문의하시오.");
+                return loginResponse;
+            }
             // 비밀번호가 틀린 경우
             if (!comparePassword(userVo.getPassword(), loginMember.getPassword(), userVo.getMbr_id())) {
-                userMapper.updateUser(loginMember);
+                int failCnt = loginMember.getFail_cnt();
+                loginMember.setFail_cnt(failCnt + 1);
+
+                if(loginMember.getFail_cnt() >= 5) {
+                    loginMember.setLock_yn("Y");
+                }
+
+                userMapper.lockMemberLogin(loginMember);
 
                 loginResponse.setSuccess(false);
                 loginResponse.setMessage("비밀번호가 틀렸습니다.");
                 return loginResponse;
             }
             // 로그인 성공
-            userMapper.updateUser(loginMember);
+            loginMember.setFail_cnt(0);
+            loginMember.setLock_yn("N");
+
+            userMapper.lockMemberLogin(loginMember);
+
             loginResponse.setLoginMember(loginMember);
             loginResponse.setSuccess(true);
         } catch ( Exception e){

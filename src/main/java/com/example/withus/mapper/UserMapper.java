@@ -16,4 +16,6 @@ public interface UserMapper {   // Mapper 메서드 이름은 DB 관점에서!
     void deleteUser(Integer mbr_sn); // 회원 탈퇴
 
     int idCheck(String mbr_id);
+
+    void lockMemberLogin(UserVo userVo);
 }

@@ -73,12 +73,8 @@ public class UserController {
         } else {
             Integer mbrSn = userServiceImpl.getMbrSn(mbrId, mbrPswd);
             session.setAttribute("userSn", mbrSn);
-
         }
         session.setAttribute("userId", loginResponse);
-
-
-
 
         return "redirect:/main";
     }

@@ -24,4 +24,7 @@ public class UserVo {
     private String mbr_email;
     private String rgtr_id;
     private LocalDateTime rgtr_dt;
+
+    private int fail_cnt;
+    private String lock_yn;
 }

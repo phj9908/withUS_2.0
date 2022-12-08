@@ -78,4 +78,11 @@
         SELECT COUNT(mbr_id) FROM tb_user WHERE mbr_id= #{mbr_id}
     </select>
 
+    <update id="lockMemberLogin">
+        UPDATE tb_user
+        SET FAIL_CNT = #{fail_cnt},
+            LOCK_YN = #{lock_yn}
+        WHERE MBR_ID = #{mbr_id}
+    </update>
+
 </mapper>
