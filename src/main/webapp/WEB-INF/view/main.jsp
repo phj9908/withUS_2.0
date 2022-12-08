@@ -64,39 +64,12 @@
                 </div>
             </nav>
 
-<%--            <!-- 아코디언 -->--%>
-<%--            <div class="area">--%>
-<%--                <div class="accordion">--%>
-<%--                    <div class="accordion_item">--%>
-<%--                        <form onsubmit="searchPlaces(); return false;">--%>
-<%--                            <div class="search">--%>
-<%--                                <input type="text" placeholder="검색어 입력">--%>
-<%--                                <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png">--%>
-<%--                                <button type="submit">검색하기</button>--%>
-<%--                            </div>--%>
-<%--                            <div class="accordion_content">--%>
-<%--                                <ul>--%>
-<%--    &lt;%&ndash;                                <li>그룹1</li>&ndash;%&gt;--%>
-<%--    &lt;%&ndash;                                <li>그룹2</li>&ndash;%&gt;--%>
-<%--    &lt;%&ndash;                                <li>그룹3</li>&ndash;%&gt;--%>
-<%--    &lt;%&ndash;                                <li>그룹4</li>&ndash;%&gt;--%>
-<%--                                    <hr>--%>
-<%--                                    <ul id="placesList"></ul>--%>
-<%--                                    <div id="pagination"></div>--%>
-<%--                                </ul>--%>
-<%--                            </div>--%>
-<%--                        </form>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-
             <!-- 검색창 -->
             <div class="area">
                 <div id="address">
                     <div class="search">
                         <input type="search" @keyup.enter='searchAddress()' v-model="keyword" placeholder="장소 검색"/>
                         <input type="button" @click='searchAddress()' class="search_btn" value="검색">
-                        <div>검색결과 : {{resultList.length}}</div>
                     </div>
                     <div>
                         <div style="width: 300px;height: 100%;border: 1px solid black; background: white">

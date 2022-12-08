@@ -5,7 +5,7 @@
     <select id="getPostList" resultType="com.example.withus.vo.PostVo">
         SELECT *
         FROM tb_txt
-        WHERE test_nm = #{group}
+        WHERE gr_sn = #{group}
     </select>
 
     <!-- 게시물 작성 -->
@@ -13,6 +13,7 @@
         INSERT INTO tb_txt
         (
             mbr_sn,
+            gr_sn,
             txt_nm,
             txt_cn,
             test_nm
@@ -20,6 +21,7 @@
         VALUES
             (
                 #{mbr_sn},
+                #{gr_sn},
                 #{txt_nm},
                 #{txt_cn},
                 #{test_nm}
