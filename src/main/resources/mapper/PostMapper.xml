@@ -16,8 +16,9 @@
             txt_nm,
             txt_cn,
             txt_date,
-            rgtr_id,
-            rgtr_dt
+            txt_loc_lat,
+            txt_loc_lng
+
         )
         VALUES
             (
@@ -25,8 +26,9 @@
                 #{txt_nm},
                 #{txt_cn},
                 #{txt_date},
-                #{rgtr_id},
-                #{rgtr_dt}
+                #{txt_loc_lat},
+                #{txt_loc_lng}
+
             )
     </insert>
 </mapper>

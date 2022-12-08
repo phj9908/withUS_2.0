@@ -124,6 +124,8 @@ function searchCoordinateToAddress(latlng) {
                 .done(function (msg) {
                     console.log(msg);
                     try {
+                        $("#latiVal").val(lati);
+                        $("#longiVal").val(longi);
                         $("#locationTitle").html(" <strong>" + msg.documents[0].place_name + "</strong>");
                         $("#category_name").html("<li>" + "category: " + msg.documents[0].category_name + "</li>");
                         $("#place_url").html("<li>" + "url: " + msg.documents[0].place_url + "</li>");

@@ -49,6 +49,23 @@ public class PostController {
         return "redirect:/main";
     }
 
+    @GetMapping("/sendLocation")
+    public String sendLocation(HttpSession session, String latiVal, String longiVal, Model model) {
+        model.addAttribute("latiVal",latiVal);
+        model.addAttribute("longiVal",longiVal);
+        Integer sn = (Integer) session.getAttribute("userSn");
+        UserVo userVo = userServiceImpl.getUserBySn(sn);
+        model.addAttribute("user",userVo);
+        return "post";
+    }
+
+    @PostMapping(value="/sendLocation")
+    public String tosendLocation(PostVo postVo) {
+        postServiceImpl.upload(postVo);
+        return "redirect:/main";
+    }
+
+
     @RequestMapping("/main")
     public String postList(Model model) {
         Integer group = 1;

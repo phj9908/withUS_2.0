@@ -16,10 +16,10 @@ public class MainController {
         return "first";
     }
 
-    @RequestMapping("/post")
-    public String postPage() {
-        return "post";
-    }
+//    @RequestMapping("/post")
+//    public String postPage() {
+//        return "post";
+//    }
 
     @RequestMapping("/postList")
     public String postListPage() {

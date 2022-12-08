@@ -86,6 +86,21 @@
             </div>
 
             <!--지도 정보-->
+            <nav id="sub">
+                <form action="sendLocation" method="GET">
+                    <p><input type="String" name="latiVal" id="latiVal" value="latitude"></p>
+                    <p><input type="String" name="longiVal" id="longiVal" value="longitude"></p>
+                    <div id = locationTitle></div>
+                    <ul>
+                        <li id =category_name></li>
+                        <li id =place_url></li>
+                        <li id =phone></li>
+                        <li id =distance></li>
+                    </ul>
+                    <input id="btn5" type="submit" value="전송">
+                </form>
+            </nav>
+            <!--지도 정보-->
 <%--            <nav id="sub">--%>
 <%--                <div id = locationTitle></div>--%>
 <%--                <ul>--%>
@@ -98,19 +113,19 @@
 <%--            </nav>--%>
 
             <!--스토리-->
-            <nav class="test-story">
-                <c:forEach items="${postlist}" var="p">
-                    <ul class="story-ul">
-                        <li>[제목]</li>
-                        <li>${p.txt_nm}</li>
-                        <li>[날짜]</li>
-                        <li>${p.txt_date}</li>
-                        <li>
-                            <a href="/postList">상세 보기</a>
-                        </li>
-                    </ul>
-                </c:forEach>
-            </nav>
+<%--            <nav class="test-story">--%>
+<%--                <c:forEach items="${postlist}" var="p">--%>
+<%--                    <ul class="story-ul">--%>
+<%--                        <li>[제목]</li>--%>
+<%--                        <li>${p.txt_nm}</li>--%>
+<%--                        <li>[날짜]</li>--%>
+<%--                        <li>${p.txt_date}</li>--%>
+<%--                        <li>--%>
+<%--                            <a href="/postList">상세 보기</a>--%>
+<%--                        </li>--%>
+<%--                    </ul>--%>
+<%--                </c:forEach>--%>
+<%--            </nav>--%>
         </div>
     </body>
 </html>

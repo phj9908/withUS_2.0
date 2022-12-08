@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.withus.mapper.ScheduleMapper">
+    <!-- 테이블 가져오기 -->
+    <select id="getScheduleList" resultType="com.example.withus.vo.ScheduleVo">
+        SELECT *
+        FROM tb_cal
+        WHERE mbr_sn = #{mbr_sn}
+    </select>
+
+    <!-- 게시물 작성 -->
+    <insert id="insertSchedule" parameterType="com.example.withus.vo.ScheduleVo">
+        INSERT INTO tb_cal
+        (
+            cal_ttl,
+            cal_str_dt,
+            cal_end_dt,
+            mbr_sn
+
+        )
+        VALUES
+            (
+                #{cal_ttl},
+                #{cal_str_dt},
+                #{cal_end_dt},
+                #{mbr_sn}
+            )
+    </insert>
+</mapper>
+<!-- ,
+            call_ttl,
+            cal_str_dt,
+            cal_end_dt   ,
+                #{call_ttl},
+                #{cal_str_dt},
+                #{cal_end_dt}-->
