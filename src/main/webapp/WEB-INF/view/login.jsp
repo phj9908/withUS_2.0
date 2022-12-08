@@ -11,7 +11,7 @@
 
     <body>
         <form action="/login" method="post">
-            <div class="figure" style="margin-top: 400px">
+            <div class="figure" style="margin-top: 400px; border-radius: 20px" >
                 <!---728x90--->
                 <div class="main">
                     <div class="head">
@@ -19,7 +19,7 @@
                     </div>
                     <div class="input_form">
                         <form>
-                            <input type="text" name="mbr_id" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
+                            <input type="text" name="mbr_id" value="ID" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
                             <input type="password" name="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
                             <input type="submit" value="LOGIN"/>
                             <input type="button" value="회원가입" style="margin-top: 10px" onclick="location.href='signup'"/>
