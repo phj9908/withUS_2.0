@@ -7,6 +7,12 @@
         FROM tb_txt
         WHERE gr_sn = #{group}
     </select>
+    <!-- 유저 sn 통틀어서 테이블 가져오기 -->
+    <select id="getmbrPostList" resultType="com.example.withus.vo.PostVo">
+        SELECT *
+        FROM tb_txt
+        WHERE mbr_sn = #{mbr_sn}
+    </select>
 
     <!-- 게시물 작성 -->
     <insert id="insertPost" parameterType="com.example.withus.vo.PostVo">

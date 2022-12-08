@@ -9,4 +9,6 @@ import java.util.List;
 public interface PostMapper {
     List<PostVo> getPostList(Integer group); // 테이블 가져오기
     void insertPost(PostVo postVo);
+
+    List<PostVo> getmbrPostList(Integer mbr_sn);
 }

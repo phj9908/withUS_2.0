@@ -66,11 +66,11 @@ public class PostController {
     }
 
 
-    @RequestMapping("/main")
-    public String postList(Model model) {
-        Integer group = 1;
-        List<PostVo> postList = postServiceImpl.getPostList(group);
-        model.addAttribute("postlist", postList);
-        return "main";
-    }
+//    @RequestMapping("/main")
+//    public String postList(Model model) {
+//        Integer group = 1;
+//        List<PostVo> postList = postServiceImpl.getPostList(group);
+//        model.addAttribute("postlist", postList);
+//        return "main";
+//    }
 }

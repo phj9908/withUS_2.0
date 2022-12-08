@@ -25,4 +25,9 @@ public class PostServiceImpl implements PostService {
     }
 
     public List<PostVo> getPostList(Integer group) { return postMapper.getPostList(group); }
+
+
+    public List<PostVo> getmbrPostList(Integer mbr_sn) {
+        return postMapper.getmbrPostList(mbr_sn);
+    }
 }
