@@ -13,18 +13,14 @@
         INSERT INTO tb_txt
         (
             mbr_sn,
-            gr_sn,
             txt_nm,
-            txt_cn,
-            test_nm
+            txt_cn
         )
         VALUES
             (
                 #{mbr_sn},
-                #{gr_sn},
                 #{txt_nm},
-                #{txt_cn},
-                #{test_nm}
+                #{txt_cn}
             )
     </insert>
 </mapper>

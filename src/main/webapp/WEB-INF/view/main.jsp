@@ -103,8 +103,10 @@
                     <ul class="story-ul">
                         <li>[제목]</li>
                         <li>${p.txt_nm}</li>
-                        <li>[작성일]</li>
-<%--                    <li>${}</li>--%>
+                        <li>[날짜]</li>
+                        <li>${p.txt_date}</li>
+                        <li>[내용]</li>
+                        <li>${p.txt_cn}</li>
                     </ul>
                 </c:forEach>
             </nav>
