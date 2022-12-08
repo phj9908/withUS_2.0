@@ -94,20 +94,17 @@
             <div class="area">
                 <div id="address">
                     <div class="search">
-                        <input type="search" @keyup.enter='searchAddress()' v-model="keyword" placeholder="주소를 입력해주세요.."/>
+                        <input type="search" @keyup.enter='searchAddress()' v-model="keyword" placeholder="장소 검색"/>
                         <input type="button" @click='searchAddress()' class="search_btn" value="검색">
                         <div>검색결과 : {{resultList.length}}</div>
                     </div>
                     <div>
-                        <div style="width: 400px;height: 100%;border: 1px solid black;">
+                        <div style="width: 300px;height: 100%;border: 1px solid black; background: white">
                             <div v-if="resultList.length > 0">
-                                <div class="list_wrap" v-for='result in resultList' @:click='move(result.x,result.y)' style="width: 400px;height: 100%;border: 1px solid black;">
-                                    <p class="txt01">{{result.address_name}}</p>
-                                    <p class="txt01">{{result.place_name}}</p>
-                                    <div class="in_w">
-                                        <div class="txt02">도로명</div>
-                                        <p class="txt03">{{result.road_address_name}}</p>
-                                    </div>
+                                <div class="list_wrap" v-for='result in resultList' @:click='move(result.x,result.y)' style="width: 300px;height: 100%;border: 1px solid black;">
+                                    <p class="txt01">지번: {{result.address_name}}</p>
+                                    <p class="txt03">도로명: {{result.road_address_name}}</p>
+                                    <p class="txt01">상호명: {{result.place_name}}</p>
                                 </div>
                             </div>
                         </div>
