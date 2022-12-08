@@ -100,6 +100,7 @@
                     <input id="btn5" type="submit" value="전송">
                 </form>
             </nav>
+
             <!--지도 정보-->
 <%--            <nav id="sub">--%>
 <%--                <div id = locationTitle></div>--%>
