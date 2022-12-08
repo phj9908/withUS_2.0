@@ -105,8 +105,9 @@
                         <li>${p.txt_nm}</li>
                         <li>[날짜]</li>
                         <li>${p.txt_date}</li>
-                        <li>[내용]</li>
-                        <li>${p.txt_cn}</li>
+                        <li>
+                            <a href="/postList">상세 보기</a>
+                        </li>
                     </ul>
                 </c:forEach>
             </nav>

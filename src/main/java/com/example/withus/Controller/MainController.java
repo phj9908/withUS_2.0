@@ -21,6 +21,11 @@ public class MainController {
         return "post";
     }
 
+    @RequestMapping("/postList")
+    public String postListPage() {
+        return "postList";
+    }
+
     @RequestMapping("/date")
     public String datePage() {
         return "date";
