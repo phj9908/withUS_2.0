@@ -20,11 +20,11 @@
                     <div class="input_form">
                         <form>
                             <input type="text" name="mbr_id" value="ID" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
-                            <input type="password" name="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
+                            <input type="password" name="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required=""><br>
+                            <span style="color: red;">${message}</span>
                             <input type="submit" value="LOGIN"/>
                             <input type="button" value="회원가입" style="margin-top: 10px" onclick="location.href='signup'"/>
                         </form>
-                        <span style="color: white;">${message}</span>
                     </div>
                 </div>
             </div>
