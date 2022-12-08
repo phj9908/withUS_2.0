@@ -30,6 +30,7 @@ public class UserServiceImpl implements UserService {
         String mbr_id = userVo.getMbr_id();
         String Password = userVo.getPassword();
         String enc = encryptPassword(Password, mbr_id);
+
         userVo.setPassword(enc);
         userVo.setMbr_id(mbr_id);
         userVo.setRgtr_id(mbr_id);

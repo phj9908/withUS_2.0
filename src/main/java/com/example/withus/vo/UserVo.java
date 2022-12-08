@@ -12,8 +12,8 @@ import java.util.Date;
 @Getter
 @Setter
 public class UserVo {
-    private Integer mbr_sn;
-    private Integer gr_sn;
+    private int mbr_sn;
+    private int gr_sn;
     private String mbr_id;
     private String password;
     private String mbr_nm;
@@ -22,6 +22,7 @@ public class UserVo {
     private String mbr_gen;
     private String mbr_tel;
     private String mbr_email;
+
     private String rgtr_id;
     private LocalDateTime rgtr_dt;
 

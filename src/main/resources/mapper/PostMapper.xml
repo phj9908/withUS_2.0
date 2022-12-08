@@ -14,13 +14,19 @@
         (
             mbr_sn,
             txt_nm,
-            txt_cn
+            txt_cn,
+            txt_date,
+            rgtr_id,
+            rgtr_dt
         )
         VALUES
             (
                 #{mbr_sn},
                 #{txt_nm},
-                #{txt_cn}
+                #{txt_cn},
+                #{txt_date},
+                #{rgtr_id},
+                #{rgtr_dt}
             )
     </insert>
 </mapper>
