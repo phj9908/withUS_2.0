@@ -1,17 +1,70 @@
 #map {
-    z-index: 1;
-    width: 2560px;
+    z-index: 0;
+    width: 100vw;
+    height: 100%;
+    position: relative;
+}
+#map2 {
+    z-index: 0;
+    width: 2559px;
     height: 100%;
     position: relative;
 }
 #grid{
     /*border:5px solid pink;*/
     display: grid;
-    grid-template-columns: 100px 400px 1600px 1fr; /*오름차순으로 설정, 이순서는 html에 선언된 순서대로 적용됨*/
+    grid-template-columns:  100px 2fr 1fr 1px; /*오름차순으로 설정, 이순서는 html에 선언된 순서대로 적용됨100px 400px  2059px 1fr  100px 400px  2059px 0.1fr 1fr*/
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+}
+#grid2{
+    /*border:5px solid pink;*/
+    display: grid;
+    grid-template-columns:  100px 2fr 1fr 1px; /*오름차순으로 설정, 이순서는 html에 선언된 순서대로 적용됨100px 400px  2059px 1fr  100px 400px  2059px 0.1fr 1fr*/
     margin: 0px;
     width: 100%;
     height: 100%;
 }
 .section{
     width: 100%;
+}
+.infoWin{
+    font-family: 'TmoneyRoundWindExtraBold';
+    padding-top:5px;
+    padding-bottom:5px;
+    padding-left:5px;
+    padding-right:5px;
+    color:white;
+    text-align:center;
+    border:1px solid #a09b07;
+    border-radius:14px;
+    opacity:75%
+}
+#nowLo{
+    z-index: 3001;
+    width: 60px;
+    height: 35px;
+    order: 1;
+    position: relative;
+}
+#sub{font-family: 'TmoneyRoundWindExtraBold';display:grid;order: 1;grid-template-rows:  1fr 0.1fr;}
+#sub>img{
+    order: 2;
+    /*z-index: 3005;*/
+}
+.area{
+    font-family: 'TmoneyRoundWindExtraBold';
+}
+.btn{
+    width: auto;
+    margin: 5px;
+    margin-top: 18px
+}
+.link{
+    font-family: 'TmoneyRoundWindExtraBold';
+}
+#test{
+    display: grid;
+    grid-template-rows:  0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr 1fr;
 }

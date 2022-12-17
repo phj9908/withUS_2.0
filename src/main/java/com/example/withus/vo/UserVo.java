@@ -4,9 +4,7 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.naming.directory.SearchControls;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @Data
 @Getter
@@ -28,4 +26,7 @@ public class UserVo {
 
     private int fail_cnt;
     private String lock_yn;
+
+    private String use_yn;
 }
+

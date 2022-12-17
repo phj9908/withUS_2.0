@@ -9,6 +9,7 @@ document.querySelectorAll('.accordion .accordion_item > button').forEach((btn) =
 // 검색창
 $(document).ready(function(){
 
+    //var cast;
     var address = new Vue({
         el : '#address',
         data : {
@@ -25,6 +26,9 @@ $(document).ready(function(){
                     alert("검색어를 입력하세요");
                     return;
                 }
+
+                //localStorage.setItem('txt',searchTxt);
+
                 // 인증키
                 var config = { headers: {Authorization : 'KakaoAK 00b285e6c72f581d9c2f16bb7c585100'}};
                 // url 및 키워드 담아 보냄 - 주소를 가져옴
@@ -33,6 +37,9 @@ $(document).ready(function(){
                 axios.get(url, config).then(function(result) {
                     // 만약 API호출을 통해 가져온 주소가 있을 경우 주소의 길이만큼 키워드 검색 API호출
                     if(result.data.documents.length != 0 && result.data != undefined && result.data != null){
+
+                        console.log(result);
+
                         // 결과를 목록에 담음
                         self.searchResult.push(result.data.documents);
                         for(var i=0; i<self.searchResult[0].length;i++){
@@ -57,7 +64,6 @@ $(document).ready(function(){
                 })
             },
             move : function(x,y){
-                // 아직 작성하지 않음. 에러 안뜨게 함수만 생성
             }
         }
     });

@@ -4,66 +4,74 @@
 <html lang="ko">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>User List</title>
-    <link rel="stylesheet" type="text/css" href="../css/write.css">
+    <title>withUS</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/nav.css">
+    <link rel="stylesheet" type="text/css" href="/css/font.css">
+
+    <script src="/js/notice.js" defer></script>
 </head>
 
 <body>
-<table  style="padding-top:50px" align = center width=550 border=0 cellpadding=2>
-    <tr>
-        <td height=20 align= center bgcolor=#FCDDB0><font color=white></font></td>
-    </tr>
-    <tr>
-        <td bgcolor=white>
-            <table class = "table2" align=center>
-                <c:forEach items="${list}" var="u">
-                    <tr>
-                        <td>이름</td>
-                        <td>${u.mbr_nm}</td>
-                    </tr>
-                    <tr>
-                        <td>닉네임</td>
-                        <td>${u.mbr_nick}</td>
-                    </tr>
-                    <tr>
-                        <td>성별</td>
-                        <td>${u.mbr_gen}</td>
-                    </tr>
-                    <tr>
-                        <td>전화번호</td>
-                        <td>${u.mbr_tel}</td>
-                    </tr>
-                    <tr>
-                        <td>생일</td>
-                        <td>${u.mbr_date}</td>
-                    </tr>
-                    <tr>
-                        <td>이메일</td>
-                        <td>${u.mbr_email}</td>
-                    </tr>
-                </c:forEach>
-            </table>
+<%--<button type="button" class="img-button" onclick="location.href='main'"></button>--%>
 
-            <center>
-                <button type="button" onclick="location.href='update'">정보 수정</button>
-                <form action="/delete" method="post">
-                    <button type="submit">회원 탈퇴</button>
+<nav>
+    <div class="nav-links" style="padding-bottom: 300px">
+        <div id="test" style="margin-top: 265px">
+            <a href="/main" class="link" style="margin-bottom:200px;font-family: 'TmoneyRoundWindExtraBold';font-size: 50px;font-weight: bold">
+                with US</a>
+            <a href="/mypage" class="link">마이페이지</a>
+            <a href="/date" class="link">캘린더</a>
+            <a href="/chat" class="link" onClick="window.open(this.href, '', 'width=600, height=650', left=0, top=0); return false;">채팅</a>
+            <a href="/free" class="link">자유게시판</a>
+            <a href="/store" class="link" style="font-family: 'TmoneyRoundWindExtraBold';">스토어 바로가기</a>
+            <form action="/logout" method="post">
+                <button type="submit" class="link btn-logout" style="cursor:pointer" all="unset">로그아웃</button>
+            </form>
+            </div>
+        </div>
+</nav>
+
+<div type="button" class="container" >
+    <div class="input-form-background row">
+        <div class="input-form col-md-12 mx-auto">
+            <c:forEach items="${list}" var="u">
+                <h1 class="mb-3" style="font-weight: bold;padding-bottom: 13px">${u.mbr_nm}님의 마이페이지</h1>
+                <form action="/userList" method="post">
+                    <div class="mb-3">
+                        <label>닉네임</label>
+                        <p>${u.mbr_nick}</p>
+                    </div>
+                    <div class="mb-3">
+                        <label>성별</label>
+                        <p>${u.mbr_gen}</p>
+                    </div>
+                    <div class="mb-3">
+                        <label>전화번호</label>
+                        <p>${u.mbr_tel}</p>
+                    </div>
+                    <div class="mb-3">
+                        <label>생일</label>
+                        <p>${u.mbr_date}</p>
+                    </div>
+                    <div class="mb-3">
+                        <label>이메일</label>
+                        <p>${u.mbr_email}</p>
+                    </div>
                 </form>
-                <button type="button" onclick="delOk()">이전 으로</button>
-            </center>
-        </td>
-    </tr>
-</table>
-<script>
-    function delOk(){
-        var result = confirm("이전 페이지로 돌아가시겠습니까?");
-
-        if(result) {
-            return history.go(-1);
-        } else {
-            return false
-        }
-    }
-</script>
+                <div>
+                    <button class="button1 btn-lg btn-block" type="button" onclick="location.href='update'">정보 수정</button>
+                    <form action="/delete" method="post">
+                        <button class="button2 btn-lg btn-block" style="margin-top: 7px; margin-bottom: 7px" type="submit" onclick="delUser()">회원 탈퇴</button>
+                    </form>
+                    <button class="button2 btn-lg btn-block" type="button" onclick="delOk()">이전으로</button>
+                </div>
+            </c:forEach>
+        </div>
+    </div>
+</div>
 </body>
 </html>

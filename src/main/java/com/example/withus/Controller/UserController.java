@@ -11,7 +11,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
@@ -86,7 +89,7 @@ public class UserController {
         return "redirect:/";
     }
 
-    // 회원 정보 수정 페이지
+    // 회원 정보 수정 페이지 이동
     @GetMapping("/update")
     public String toUpdatePage(HttpSession session, Model model) {
         Integer sn = (Integer) session.getAttribute("userSn");
