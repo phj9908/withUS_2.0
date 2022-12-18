@@ -13,7 +13,6 @@ $(document).ready(function(){
 
     getMyData();
 
-    // 처음 접속했을때 오른쪽 네비바에 스토리 추가?
     $("#send").hide();
     $("#infoForm").hide();
     $("#storyForm").hide();
@@ -108,16 +107,6 @@ function setMyMap() {
     naver.maps.Event.addListener(map, 'mousedown', function(e) {
         menuLayer.hide();
     });
-
-    // function setMarkerAndInfo(e){
-    //     var coordHtml = 'Point: ' + readlist[0].txt_cn + '<br />';
-    //
-    //     menuLayer.show().css({
-    //         left: e.offset.x-22,
-    //         top: e.offset.y-90,
-    //         borderRadius:20
-    //     }).html(coordHtml);
-    // };
 }
 function setData(MyList){
 
@@ -170,7 +159,6 @@ function setData(MyList){
             //$("#txtPic").val(item.txt_pic);  // 사진 첨부방법?
             $("#latiVal2").val(item.txt_loc_lat);
             $("#longiVal2").val(item.txt_loc_lng);
-            //$("#l").val(item.txt_loc_lng);
             $("#txtTitle").html(" <strong>" + item.txt_nm + "</strong>");
             $("#txtContent").html(item.txt_cn);
             $("#txtDate").html(item.txt_date);
@@ -232,7 +220,6 @@ function getData(target){
     $.ajax({
         method: "GET",
         url: "https://dapi.kakao.com/v2/local/search/keyword.json?y=" + lati.toString() + "&x=" + longi.toString(),
-        //url: "https://dapi.kakao.com/v2/local/search/keyword.json",
         data: {query: target},
         headers: {Authorization: "KakaoAK 00b285e6c72f581d9c2f16bb7c585100"}
     })
