@@ -11,12 +11,15 @@ $(document).ready(function(){
     // 코드수정 반영 디버깅용
     //alert(crd.latitude+","+crd.longitude);
 
+    // db의 게시물을 프론트에 가져온다.
     getMyData();
 
+    // 오른쪽 네비바 폼 세팅
     $("#send").hide();
     $("#infoForm").hide();
     $("#storyForm").hide();
 
+    // 현재위치 버튼 클릭 이벤트
     $("#nowLo").click(function (){
         map.setCenter(new naver.maps.LatLng(lati, longi));
         map.setZoom(15);
@@ -46,6 +49,7 @@ function getMyData(){
 }
 
 function myFunction() {
+    // 검색창 검색 클릭이벤트
     getData($("#searchInput").val());
 }
 
